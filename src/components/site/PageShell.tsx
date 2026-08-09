@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { ReachOutDialog } from "./ReachOutDialog";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
@@ -8,6 +9,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       <Nav />
       <main className="pt-28">{children}</main>
       <Footer />
+      <ReachOutDialog />
     </div>
   );
 }
