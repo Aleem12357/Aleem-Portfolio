@@ -2,7 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { Portrait3D } from "@/components/site/Portrait3D";
-import { experience, profile, projects, services, stack, stats } from "@/data/portfolio";
+import { BuildTogether } from "@/components/site/BuildTogether";
+import { ProjectShowcase } from "@/components/site/ProjectShowcase";
+import { experience, profile, services, stack, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -129,9 +131,6 @@ function Home() {
       {/* Featured work */}
       <Section eyebrow="Selected work" title="Curated" italic="work">
         <ProjectShowcase />
-      </Section>
-      <Section>
-        <div className="hidden" />
         <div className="mt-8 text-center">
           <Link
             to="/work"
