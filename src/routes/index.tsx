@@ -4,7 +4,9 @@ import { PageShell, Section } from "@/components/site/PageShell";
 import { Portrait3D } from "@/components/site/Portrait3D";
 import { BuildTogether } from "@/components/site/BuildTogether";
 import { ProjectShowcase } from "@/components/site/ProjectShowcase";
-import { experience, profile, services, stack, stats } from "@/data/portfolio";
+import { TechStackMarquee } from "@/components/site/TechStackMarquee";
+import { Globe } from "@/components/site/Globe";
+import { experience, profile, services, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
