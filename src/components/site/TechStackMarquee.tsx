@@ -28,7 +28,6 @@ const iconSlug: Record<string, string> = {
   Git: "git",
   GitHub: "github",
   "VS Code": "vscodium",
-  Cursor: "cursorai",
   Postman: "postman",
   Jira: "jira",
   Trello: "trello",
