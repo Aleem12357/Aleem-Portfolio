@@ -6,7 +6,10 @@ import { BuildTogether } from "@/components/site/BuildTogether";
 import { ProjectShowcase } from "@/components/site/ProjectShowcase";
 import { TechStackMarquee } from "@/components/site/TechStackMarquee";
 import { Globe } from "@/components/site/Globe";
-import { experience, profile, services, stats } from "@/data/portfolio";
+import { WhatYouGet } from "@/components/site/WhatYouGet";
+import { UsesMarquee } from "@/components/site/UsesMarquee";
+import { Testimonials } from "@/components/site/Testimonials";
+import { experience, profile, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
