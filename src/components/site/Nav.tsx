@@ -41,8 +41,11 @@ export function Nav() {
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <div
         ref={ref}
-        className="pointer-events-auto relative w-full max-w-2xl rounded-full border border-border bg-popover/80 px-2 py-2 backdrop-blur-xl md:w-auto"
-        style={{ boxShadow: "var(--shadow-soft)" }}
+        className="pointer-events-auto relative w-full max-w-2xl rounded-full border border-foreground/10 bg-foreground/[0.06] px-2 py-2 backdrop-blur-2xl backdrop-saturate-150 md:w-auto"
+        style={{
+          boxShadow:
+            "var(--shadow-soft), inset 0 1px 0 oklch(1 0 0 / 0.12), inset 0 -1px 0 oklch(0 0 0 / 0.25)",
+        }}
       >
         <nav className="flex items-center justify-between gap-1">
           <Link to="/" className="ml-2 font-mono text-xs tracking-[0.28em] text-foreground md:hidden">
@@ -86,7 +89,7 @@ export function Nav() {
         </nav>
 
         {openMore && (
-          <div className="absolute left-1/2 top-[calc(100%+0.5rem)] w-[22rem] -translate-x-1/2 animate-scale-in rounded-2xl border border-border bg-popover/95 p-2 backdrop-blur-xl">
+          <div className="absolute left-1/2 top-[calc(100%+0.5rem)] w-[22rem] -translate-x-1/2 animate-scale-in rounded-2xl border border-foreground/10 bg-popover/70 p-2 backdrop-blur-2xl backdrop-saturate-150">
             {more.map((m) => (
               <Link
                 key={m.to}
@@ -101,7 +104,7 @@ export function Nav() {
         )}
 
         {openMobile && (
-          <div className="absolute inset-x-0 top-[calc(100%+0.5rem)] animate-scale-in rounded-2xl border border-border bg-popover/95 p-2 backdrop-blur-xl md:hidden">
+          <div className="absolute inset-x-0 top-[calc(100%+0.5rem)] animate-scale-in rounded-2xl border border-foreground/10 bg-popover/70 p-2 backdrop-blur-2xl backdrop-saturate-150 md:hidden">
             {[...links, ...more].map((l) => (
               <Link
                 key={l.to}

@@ -6,7 +6,10 @@ import { BuildTogether } from "@/components/site/BuildTogether";
 import { ProjectShowcase } from "@/components/site/ProjectShowcase";
 import { TechStackMarquee } from "@/components/site/TechStackMarquee";
 import { Globe } from "@/components/site/Globe";
-import { experience, profile, services, stats } from "@/data/portfolio";
+import { WhatYouGet } from "@/components/site/WhatYouGet";
+import { UsesMarquee } from "@/components/site/UsesMarquee";
+import { Testimonials } from "@/components/site/Testimonials";
+import { experience, profile, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -91,34 +94,22 @@ function Home() {
         ))}
       </section>
 
-      {/* Let's build together */}
-      <Section>
-        <BuildTogether />
-      </Section>
-
-      {/* Services */}
-      <Section eyebrow="Let's build together" title="Clear communication," italic="no surprises">
-        <div className="grid gap-3 md:grid-cols-3">
-          {services.map((s) => (
-            <article key={s.title} className="panel p-6">
-              <div className="eyebrow">{s.eyebrow}</div>
-              <h3 className="mt-3 text-2xl leading-snug">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      {/* Tech stack + globe */}
+      {/* Build together + tech stack */}
       <Section className="grid gap-3 md:grid-cols-2">
+        <BuildTogether />
         <TechStackMarquee />
+      </Section>
+
+      {/* What you get / globe / uses */}
+      <Section className="grid gap-3 md:grid-cols-3">
+        <WhatYouGet />
         <div className="panel overflow-hidden p-6">
           <div className="eyebrow">Flexible with timezones</div>
           <h3 className="mt-2 text-2xl">Based in Lahore, available globally</h3>
           <Globe />
         </div>
+        <UsesMarquee />
       </Section>
-
 
       {/* Featured work */}
       <Section eyebrow="Selected work" title="Curated" italic="work">
@@ -132,6 +123,55 @@ function Home() {
           </Link>
         </div>
       </Section>
+
+      {/* Know about me */}
+      <Section>
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <div>
+            <div className="eyebrow">Know about me</div>
+            <h2 className="mt-4 text-4xl leading-[1.1] md:text-5xl">
+              Full-Stack Developer and
+              <br />a little bit of <span className="ital-grad">everything</span>
+            </h2>
+            <div className="mt-6 space-y-4 text-[0.95rem] leading-relaxed text-muted-foreground">
+              <p>{profile.blurb}</p>
+              <p>{profile.blurb2}</p>
+              <p>I believe in waking up each day eager to make a difference!</p>
+            </div>
+            <div className="mt-6 flex gap-3">
+              {[
+                { href: profile.github, Icon: Github, label: "GitHub" },
+                { href: profile.linkedin, Icon: Linkedin, label: "LinkedIn" },
+                { href: `mailto:${profile.email}`, Icon: Mail, label: "Email" },
+              ].map(({ href, Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Icon className="size-4" />
+                </a>
+              ))}
+            </div>
+            <Link
+              to="/about"
+              className="eyebrow mt-8 inline-flex items-center gap-2 text-foreground"
+            >
+              Work experience <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+          <Portrait3D />
+        </div>
+      </Section>
+
+      {/* Testimonials */}
+      <Section eyebrow="Testimonials" title="Word on the street" italic="about me">
+        <Testimonials />
+      </Section>
+
 
       {/* Experience preview */}
       <Section eyebrow="Work experience" title="Where I've" italic="been">

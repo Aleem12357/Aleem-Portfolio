@@ -329,3 +329,43 @@ export const services = [
     body: "Short feedback loops, visible progress and honest estimates from kickoff to handover.",
   },
 ];
+
+export type Testimonial = { headline: string; quote: string; name: string; title: string };
+
+export const testimonials: Testimonial[] = [
+  {
+    headline: "He turned our messy brief into something clean",
+    quote:
+      "We handed Aleem a rough idea and a folder of screenshots. He came back with a working prototype that was tidier than anything we'd sketched.",
+    name: "Hamza R.",
+    title: "Founder, early-stage startup",
+  },
+  {
+    headline: "Shipped the portal ahead of schedule",
+    quote:
+      "Role-based dashboards, chat and reporting — all delivered before the deadline and easy for our staff to actually use.",
+    name: "Sana K.",
+    title: "Program Lead, school network",
+  },
+  {
+    headline: "Caught problems we didn't even know we had",
+    quote:
+      "While rebuilding our pages he spotted broken mobile navigation and unoptimised images, then fixed both without being asked.",
+    name: "Daniyal A.",
+    title: "Marketing Manager",
+  },
+  {
+    headline: "A teammate, not just a contractor",
+    quote:
+      "Clear updates, honest estimates and code our own devs could pick up the moment the project handed over.",
+    name: "Ayesha M.",
+    title: "Product Manager, agency",
+  },
+  {
+    headline: "Our students actually enjoy the labs now",
+    quote:
+      "As a TA he explained OOP concepts in a way that stuck. That same patience shows up in how he documents his work.",
+    name: "Dr. Faisal T.",
+    title: "Faculty, UCP",
+  },
+];
