@@ -2,6 +2,46 @@ import { useRef, useState } from "react";
 import { Search } from "lucide-react";
 import { stack } from "@/data/portfolio";
 
+const iconSlug: Record<string, string> = {
+  C: "c",
+  "C++": "cplusplus",
+  Python: "python",
+  SQL: "postgresql",
+  JavaScript: "javascript",
+  TypeScript: "typescript",
+  PHP: "php",
+  "HTML/CSS": "html5",
+  React: "react",
+  "Next.js": "nextdotjs",
+  "Vue.js": "vuedotjs",
+  "Node.js": "nodedotjs",
+  Express: "express",
+  Vite: "vite",
+  "Tailwind CSS": "tailwindcss",
+  Bootstrap: "bootstrap",
+  Playwright: "playwright",
+  Selenium: "selenium",
+  MongoDB: "mongodb",
+  Supabase: "supabase",
+  Firebase: "firebase",
+  "Drizzle ORM": "drizzle",
+  Git: "git",
+  GitHub: "github",
+  "VS Code": "vscodium",
+  Cursor: "cursorai",
+  Postman: "postman",
+  Jira: "jira",
+  Trello: "trello",
+  Figma: "figma",
+  IntelliJ: "intellijidea",
+  "Google Colab": "googlecolab",
+};
+
+function icon(name: string) {
+  const slug = iconSlug[name];
+  return slug ? `https://cdn.simpleicons.org/${slug}/white` : null;
+}
+
 const rows = [
   [...stack.Languages, ...stack.Frameworks.slice(0, 4)],
   [...stack.Frameworks.slice(4), ...stack.Data],
@@ -19,14 +59,18 @@ function Row({ items, reverse, speed }: { items: string[]; reverse?: boolean; sp
           animationDirection: reverse ? "reverse" : "normal",
         }}
       >
-        {doubled.map((item, i) => (
-          <span
-            key={`${item}-${i}`}
-            className="whitespace-nowrap rounded-lg border border-border bg-surface-2 px-3 py-1.5 font-mono text-xs text-muted-foreground"
-          >
-            {item}
-          </span>
-        ))}
+        {doubled.map((item, i) => {
+          const src = icon(item);
+          return (
+            <span
+              key={`${item}-${i}`}
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg border border-border bg-surface-2 px-3 py-1.5 font-mono text-xs text-muted-foreground"
+            >
+              {src && <img src={src} alt="" aria-hidden loading="lazy" className="size-3.5 opacity-90" />}
+              {item}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
