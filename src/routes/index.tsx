@@ -107,26 +107,16 @@ function Home() {
         </div>
       </Section>
 
-      {/* Tech stack */}
-      <Section eyebrow="Tech stack" title="The stack behind" italic="everything I ship">
-        <div className="grid gap-3 md:grid-cols-2">
-          {Object.entries(stack).map(([group, items]) => (
-            <div key={group} className="panel p-6">
-              <div className="eyebrow">{group}</div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {items.map((i) => (
-                  <span
-                    key={i}
-                    className="rounded-full border border-border bg-surface-2 px-3 py-1.5 font-mono text-xs text-muted-foreground"
-                  >
-                    {i}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+      {/* Tech stack + globe */}
+      <Section className="grid gap-3 md:grid-cols-2">
+        <TechStackMarquee />
+        <div className="panel overflow-hidden p-6">
+          <div className="eyebrow">Flexible with timezones</div>
+          <h3 className="mt-2 text-2xl">Based in Lahore, available globally</h3>
+          <Globe />
         </div>
       </Section>
+
 
       {/* Featured work */}
       <Section eyebrow="Selected work" title="Curated" italic="work">
