@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { projects } from "@/data/portfolio";
+import { ProjectImages } from "./ProjectImages";
 
 const gradients = [
   "linear-gradient(135deg, oklch(0.62 0.24 350), oklch(0.82 0.12 340))",
