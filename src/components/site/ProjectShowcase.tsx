@@ -18,7 +18,7 @@ export function ProjectShowcase() {
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset.i));
+          if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset['i']));
         });
       },
       { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
@@ -27,7 +27,7 @@ export function ProjectShowcase() {
     return () => obs.disconnect();
   }, []);
 
-  const p = projects[active];
+  const p = projects[active] ?? projects[0]!;
 
   return (
     <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr]">
