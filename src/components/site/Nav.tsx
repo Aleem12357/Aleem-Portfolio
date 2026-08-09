@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { openReachOut } from "./reach-out";
 
 const links = [
   { to: "/", label: "Home" },
@@ -67,12 +68,12 @@ export function Nav() {
               More
               <ChevronDown className={`size-3.5 transition-transform ${openMore ? "rotate-180" : ""}`} />
             </button>
-            <Link
-              to="/contact"
+            <button
+              onClick={() => openReachOut("calendar")}
               className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground transition-colors hover:bg-accent"
             >
-              Get in touch
-            </Link>
+              Book a Call
+            </button>
           </div>
 
           <button

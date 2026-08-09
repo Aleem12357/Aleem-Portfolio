@@ -2,7 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { Portrait3D } from "@/components/site/Portrait3D";
-import { experience, profile, projects, services, stack, stats } from "@/data/portfolio";
+import { BuildTogether } from "@/components/site/BuildTogether";
+import { ProjectShowcase } from "@/components/site/ProjectShowcase";
+import { experience, profile, services, stack, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,6 +89,11 @@ function Home() {
         ))}
       </section>
 
+      {/* Let's build together */}
+      <Section>
+        <BuildTogether />
+      </Section>
+
       {/* Services */}
       <Section eyebrow="Let's build together" title="Clear communication," italic="no surprises">
         <div className="grid gap-3 md:grid-cols-3">
@@ -123,25 +130,7 @@ function Home() {
 
       {/* Featured work */}
       <Section eyebrow="Selected work" title="Curated" italic="work">
-        <div className="grid gap-3 md:grid-cols-2">
-          {projects.slice(0, 4).map((p) => (
-            <article key={p.slug} className="panel group p-7 transition-colors hover:border-brand/50">
-              <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-3xl">{p.title}</h3>
-                <span className="font-mono text-xs text-muted-foreground">{p.year}</span>
-              </div>
-              <p className="mt-2 text-sm text-foreground/80">{p.tagline}</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {p.stack.map((s) => (
-                  <span key={s} className="rounded-md bg-surface-2 px-2 py-1 font-mono text-[0.65rem] text-muted-foreground">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+        <ProjectShowcase />
         <div className="mt-8 text-center">
           <Link
             to="/work"
