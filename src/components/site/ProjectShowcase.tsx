@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { projects } from "@/data/portfolio";
+import { ProjectImages } from "./ProjectImages";
 
 const gradients = [
   "linear-gradient(135deg, oklch(0.62 0.24 350), oklch(0.82 0.12 340))",
@@ -48,6 +49,7 @@ export function ProjectShowcase() {
               <h3 className="max-w-md text-2xl leading-snug text-primary-foreground">{proj.tagline}</h3>
               <ArrowUpRight className="mt-1 size-5 shrink-0 text-primary-foreground/80" />
             </div>
+            <ProjectImages images={proj.images} alt={proj.title} />
             <div className="mt-6 rounded-2xl border border-primary-foreground/15 bg-background/85 p-5">
               <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
                 {proj.year} · {proj.stack[0]}

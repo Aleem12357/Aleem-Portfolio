@@ -102,11 +102,15 @@ export type Project = {
   stack: string[];
   highlights: string[];
   year: string;
+  category: string;
+  images: string[];
 };
 
 export const projects: Project[] = [
   {
     slug: "digital-diary",
+    category: "Web App",
+    images: ["/projects/digital-diary-1.svg", "/projects/digital-diary-2.svg"],
     title: "Digital Diary",
     tagline: "School management portal with AI career guidance",
     description:
@@ -122,6 +126,8 @@ export const projects: Project[] = [
   },
   {
     slug: "veamkodrive",
+    category: "Web App",
+    images: ["/projects/veamkodrive-1.svg", "/projects/veamkodrive-2.svg"],
     title: "Veamkodrive",
     tagline: "Oman automobile marketplace",
     description:
@@ -135,6 +141,8 @@ export const projects: Project[] = [
   },
   {
     slug: "unitrix",
+    category: "Web App",
+    images: ["/projects/unitrix-1.svg", "/projects/unitrix-2.svg"],
     title: "Unitrix",
     tagline: "Study-abroad consultancy platform — in development",
     description:
@@ -145,6 +153,8 @@ export const projects: Project[] = [
   },
   {
     slug: "bytely",
+    category: "Web App",
+    images: ["/projects/bytely-1.svg", "/projects/bytely-2.svg"],
     title: "Bytely Auth Module",
     tagline: "Authentication built twice — Firebase and MERN",
     description:
@@ -160,6 +170,8 @@ export const projects: Project[] = [
   },
   {
     slug: "ezi",
+    category: "Website",
+    images: ["/projects/ezi-1.svg", "/projects/ezi-2.svg"],
     title: "EZI Website",
     tagline: "Re-engineered service site for Canadian cities",
     description:
@@ -170,6 +182,8 @@ export const projects: Project[] = [
   },
   {
     slug: "passop",
+    category: "Web App",
+    images: ["/projects/passop-1.svg", "/projects/passop-2.svg"],
     title: "PassOP — Password Manager",
     tagline: "Secure, responsive password vault",
     description:
@@ -180,6 +194,8 @@ export const projects: Project[] = [
   },
   {
     slug: "textutils",
+    category: "Web App",
+    images: ["/projects/textutils-1.svg", "/projects/textutils-2.svg"],
     title: "TextUtils",
     tagline: "Text manipulation toolkit",
     description:
@@ -190,6 +206,8 @@ export const projects: Project[] = [
   },
   {
     slug: "mini-search-engine",
+    category: "Systems",
+    images: ["/projects/mini-search-engine-1.svg", "/projects/mini-search-engine-2.svg"],
     title: "Mini Search Engine",
     tagline: "Hash-table indexing and boolean retrieval in C++",
     description:
@@ -200,6 +218,8 @@ export const projects: Project[] = [
   },
   {
     slug: "clearclutter",
+    category: "CLI Tool",
+    images: ["/projects/clearclutter-1.svg", "/projects/clearclutter-2.svg"],
     title: "ClearClutter",
     tagline: "Automated file organiser CLI",
     description:

@@ -4,7 +4,7 @@ import { openReachOut } from "./reach-out";
 export function BuildTogether() {
   return (
     <button
-      onClick={() => openReachOut("menu")}
+      onClick={() => openReachOut("calendar")}
       className="panel group relative w-full overflow-hidden p-10 text-center transition-colors hover:border-brand/50"
     >
       <div className="relative mx-auto flex h-56 items-center justify-center">

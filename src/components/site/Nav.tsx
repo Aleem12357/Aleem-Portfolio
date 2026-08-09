@@ -69,7 +69,7 @@ export function Nav() {
               <ChevronDown className={`size-3.5 transition-transform ${openMore ? "rotate-180" : ""}`} />
             </button>
             <button
-              onClick={() => openReachOut("calendar")}
+              onClick={() => openReachOut("menu")}
               className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground transition-colors hover:bg-accent"
             >
               Book a Call
