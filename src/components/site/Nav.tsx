@@ -89,7 +89,7 @@ export function Nav() {
         </nav>
 
         {openMore && (
-          <div className="absolute left-1/2 top-[calc(100%+0.5rem)] w-[22rem] -translate-x-1/2 animate-scale-in rounded-2xl border border-border bg-popover/95 p-2 backdrop-blur-xl">
+          <div className="absolute left-1/2 top-[calc(100%+0.5rem)] w-[22rem] -translate-x-1/2 animate-scale-in rounded-2xl border border-foreground/10 bg-popover/70 p-2 backdrop-blur-2xl backdrop-saturate-150">
             {more.map((m) => (
               <Link
                 key={m.to}
@@ -104,7 +104,7 @@ export function Nav() {
         )}
 
         {openMobile && (
-          <div className="absolute inset-x-0 top-[calc(100%+0.5rem)] animate-scale-in rounded-2xl border border-border bg-popover/95 p-2 backdrop-blur-xl md:hidden">
+          <div className="absolute inset-x-0 top-[calc(100%+0.5rem)] animate-scale-in rounded-2xl border border-foreground/10 bg-popover/70 p-2 backdrop-blur-2xl backdrop-saturate-150 md:hidden">
             {[...links, ...more].map((l) => (
               <Link
                 key={l.to}
