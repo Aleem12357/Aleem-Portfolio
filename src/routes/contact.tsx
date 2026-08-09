@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Calendar, Github, Linkedin, Mail, Send } from "lucide-react";
 import { toast } from "sonner";
 import { PageShell, Section } from "@/components/site/PageShell";
+import { BookingCalendar } from "@/components/site/BookingCalendar";
 import { profile } from "@/data/portfolio";
 
 export const Route = createFileRoute("/contact")({
@@ -22,6 +23,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const [tab, setTab] = useState<"book" | "message">("book");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -45,7 +47,48 @@ function Contact() {
   return (
     <PageShell>
       <Section eyebrow="Contact" title="Project, Role or" italic="Just a Hey?">
-        <div className="grid gap-3 md:grid-cols-[1.2fr_0.8fr]">
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+          <div className="flex rounded-full border border-border bg-surface-2 p-1">
+            {(["book", "message"] as const).map((t) => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className={`inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm transition-colors ${
+                  tab === t ? "bg-accent text-foreground" : "text-muted-foreground"
+                }`}
+              >
+                {t === "book" ? <Calendar className="size-4" /> : <Send className="size-4" />}
+                {t === "book" ? "Book a Call" : "Send Message"}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-1">
+            {[
+              { href: `mailto:${profile.email}`, Icon: Mail, label: "Email" },
+              { href: profile.linkedin, Icon: Linkedin, label: "LinkedIn" },
+              { href: profile.github, Icon: Github, label: "GitHub" },
+            ].map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Icon className="size-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {tab === "book" && (
+          <div className="mb-10">
+            <BookingCalendar />
+          </div>
+        )}
+
+        <div className={`grid gap-3 md:grid-cols-[1.2fr_0.8fr] ${tab === "book" ? "hidden" : ""}`}>
           <form onSubmit={submit} className="panel p-7">
             <h2 className="text-2xl">Send me a message</h2>
             <p className="mt-1 text-sm text-muted-foreground">I read every one.</p>
