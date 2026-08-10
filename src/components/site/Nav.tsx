@@ -92,24 +92,30 @@ export function Nav() {
             </button>
             <button
               onClick={() => openReachOut("menu")}
-              className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground outline-none transition-all duration-200 hover:bg-accent hover:shadow-[0_6px_20px_-8px_oklch(0_0_0/0.8)] focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-95"
+              className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground outline-none transition-all duration-200 hover:bg-accent hover:shadow-[0_6px_20px_-8px_oklch(0_0_0/0.4)] focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-95"
             >
               Book a Call
             </button>
-
+            <ThemeToggle />
           </div>
 
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setOpenMobile((v) => !v)}
-            className="rounded-full p-2 text-muted-foreground md:hidden"
-          >
-            {openMobile ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          <div className="flex items-center gap-1 md:hidden">
+            <ThemeToggle />
+            <button
+              aria-label="Toggle menu"
+              onClick={() => setOpenMobile((v) => !v)}
+              className="rounded-full p-2 text-muted-foreground"
+            >
+              {openMobile ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </nav>
 
         {openMore && (
-          <div className="absolute left-1/2 top-[calc(100%+0.5rem)] w-[22rem] -translate-x-1/2 animate-scale-in rounded-2xl border border-foreground/10 bg-popover/70 p-2 backdrop-blur-2xl backdrop-saturate-150">
+          <div
+            className="absolute left-1/2 top-[calc(100%+0.5rem)] w-[22rem] -translate-x-1/2 animate-scale-in rounded-2xl border border-border bg-popover p-2 backdrop-blur-2xl backdrop-saturate-150"
+            style={{ boxShadow: "var(--shadow-soft)" }}
+          >
             {more.map((m) => (
               <Link
                 key={m.to}
@@ -124,20 +130,34 @@ export function Nav() {
         )}
 
         {openMobile && (
-          <div className="absolute inset-x-0 top-[calc(100%+0.5rem)] animate-scale-in rounded-2xl border border-foreground/10 bg-popover/70 p-2 backdrop-blur-2xl backdrop-saturate-150 md:hidden">
+          <div
+            className="absolute inset-x-0 top-[calc(100%+0.5rem)] animate-scale-in rounded-2xl border border-border bg-popover p-2 md:hidden"
+            style={{ boxShadow: "0 24px 60px -20px oklch(0 0 0 / 0.55)" }}
+          >
             {[...links, ...more].map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 className={`block rounded-xl px-3 py-2.5 text-sm ${
-                  pathname === l.to ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+                  pathname === l.to ? "bg-accent text-accent-foreground" : "text-foreground/80"
                 }`}
               >
                 {l.label}
               </Link>
             ))}
+            <button
+              onClick={() => {
+                setOpenMobile(false);
+                openReachOut("menu");
+              }}
+              className="mt-1 w-full rounded-xl px-4 py-2.5 text-left text-sm text-primary-foreground"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              Book a Call
+            </button>
           </div>
         )}
+
       </div>
     </header>
   );
