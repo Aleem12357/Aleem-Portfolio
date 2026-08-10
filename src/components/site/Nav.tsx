@@ -2,6 +2,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { openReachOut } from "./reach-out";
+import { ThemeToggle } from "./ThemeToggle";
+
 
 const links = [
   { to: "/", label: "Home" },

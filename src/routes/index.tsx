@@ -164,7 +164,8 @@ function Home() {
               Work experience <ArrowRight className="size-3.5" />
             </Link>
           </div>
-          <Portrait3D />
+          <Portrait3D logo />
+
         </div>
       </Section>
 
