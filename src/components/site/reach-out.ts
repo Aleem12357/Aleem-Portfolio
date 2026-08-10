@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import { playNotification } from "@/lib/sound";
 
 type View = "menu" | "calendar";
 const EVENT = "reach-out:open";
 
 export function openReachOut(view: View = "menu") {
+  playNotification();
   window.dispatchEvent(new CustomEvent(EVENT, { detail: view }));
 }
+
 
 export function useReachOut() {
   const [open, setOpen] = useState(false);
