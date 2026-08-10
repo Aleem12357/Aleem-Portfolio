@@ -86,7 +86,7 @@ export const Route = createFileRoute("/work_/$slug")({
   component: ProjectDetail,
 });
 
-export function ProjectDetail() {
+function ProjectDetail() {
   const { slug } = Route.useParams();
   const project = allProjects.find((p) => p.slug === slug);
 

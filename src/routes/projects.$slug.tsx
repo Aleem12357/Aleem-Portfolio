@@ -1,6 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ProjectDetail } from "./work_.$slug";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projects/$slug")({
-  component: ProjectDetail,
+  beforeLoad: ({ params }) => {
+    throw redirect({
+      to: "/work/$slug",
+      params: { slug: params.slug },
+      replace: true,
+    });
+  },
 });
