@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import aleem from "@/assets/aleem.png.asset.json";
+import logoAsset from "@/assets/aleem-logo.png.asset.json";
 
 /**
  * 3D portrait card: tilts toward the cursor with layered parallax depth,
  * orbiting rings and the name engraved on the plate.
  */
-export function Portrait3D() {
+export function Portrait3D({ logo = false }: { logo?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const [t, setT] = useState({ rx: 0, ry: 0, active: false });
 
@@ -23,9 +24,39 @@ export function Portrait3D() {
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={() => setT({ rx: 0, ry: 0, active: false })}
-      className="relative mx-auto aspect-square w-full max-w-[26rem]"
+      className={`relative mx-auto aspect-square w-full max-w-[26rem] ${logo ? "mt-16" : ""}`}
       style={{ perspective: "1200px" }}
     >
+      {logo && (
+        <div className="pointer-events-none absolute inset-x-0 -top-12 z-20 flex justify-center">
+          <div className="relative h-24 w-24">
+            <img
+              src={logoAsset.url}
+              alt=""
+              aria-hidden
+              className={`absolute inset-0 h-24 w-24 object-contain drop-shadow-[0_10px_30px_rgba(60,110,255,0.45)] transition-all duration-500 ease-out ${
+                t.active ? "-translate-x-16 -rotate-[22deg] opacity-90" : "translate-x-0 rotate-0 opacity-0"
+              }`}
+            />
+            <img
+              src={logoAsset.url}
+              alt=""
+              aria-hidden
+              className={`absolute inset-0 h-24 w-24 object-contain drop-shadow-[0_10px_30px_rgba(60,110,255,0.45)] transition-all duration-500 ease-out ${
+                t.active ? "translate-x-16 rotate-[22deg] opacity-90" : "translate-x-0 rotate-0 opacity-0"
+              }`}
+            />
+            <img
+              src={logoAsset.url}
+              alt="Muhammad Aleem logo"
+              className={`absolute inset-0 h-24 w-24 object-contain drop-shadow-[0_14px_36px_rgba(60,110,255,0.55)] transition-transform duration-500 ease-out ${
+                t.active ? "scale-110" : "scale-100"
+              }`}
+            />
+          </div>
+        </div>
+      )}
+
       {/* orbiting rings */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -34,6 +65,7 @@ export function Portrait3D() {
         <div className="absolute inset-[6%] rounded-full border border-brand/40" />
         <div className="absolute inset-[16%] rounded-full border border-brand-2/40" />
       </div>
+
 
       <div
         className="relative h-full w-full transition-transform duration-300 ease-out will-change-transform"
