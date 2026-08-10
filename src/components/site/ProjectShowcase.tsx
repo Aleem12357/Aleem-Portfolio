@@ -4,12 +4,13 @@ import { projects } from "@/data/portfolio";
 import { ProjectImages } from "./ProjectImages";
 
 const gradients = [
-  "linear-gradient(135deg, oklch(0.62 0.24 350), oklch(0.82 0.12 340))",
-  "linear-gradient(135deg, oklch(0.45 0.2 275), oklch(0.7 0.16 290))",
-  "linear-gradient(135deg, oklch(0.55 0.16 200), oklch(0.78 0.11 190))",
-  "linear-gradient(135deg, oklch(0.5 0.18 30), oklch(0.8 0.13 60))",
-  "linear-gradient(135deg, oklch(0.48 0.16 150), oklch(0.76 0.13 160))",
+  "linear-gradient(150deg, oklch(0.32 0.13 300), oklch(0.55 0.22 335) 55%, oklch(0.74 0.15 20))",
+  "linear-gradient(150deg, oklch(0.28 0.11 265), oklch(0.46 0.19 275) 55%, oklch(0.7 0.14 250))",
+  "linear-gradient(150deg, oklch(0.27 0.08 210), oklch(0.48 0.13 205) 55%, oklch(0.72 0.13 180))",
+  "linear-gradient(150deg, oklch(0.3 0.1 40), oklch(0.53 0.17 45) 55%, oklch(0.78 0.14 75))",
+  "linear-gradient(150deg, oklch(0.26 0.08 165), oklch(0.45 0.14 160) 55%, oklch(0.72 0.14 140))",
 ];
+
 
 export function ProjectShowcase() {
   const [active, setActive] = useState(0);
@@ -49,14 +50,11 @@ export function ProjectShowcase() {
               <h3 className="max-w-md text-2xl leading-snug text-primary-foreground">{proj.tagline}</h3>
               <ArrowUpRight className="mt-1 size-5 shrink-0 text-primary-foreground/80" />
             </div>
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-primary-foreground/80">
+              {proj.description}
+            </p>
             <ProjectImages images={proj.images} alt={proj.title} />
-            <div className="mt-6 rounded-2xl border border-primary-foreground/15 bg-background/85 p-5">
-              <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-                {proj.year} · {proj.stack[0]}
-              </div>
-              <div className="mt-3 font-display text-3xl">{proj.title}</div>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{proj.description}</p>
-            </div>
+
           </div>
         ))}
       </div>

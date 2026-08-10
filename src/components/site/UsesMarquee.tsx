@@ -29,10 +29,10 @@ export function UsesMarquee() {
               className="grid size-16 shrink-0 place-items-center rounded-2xl border border-border bg-surface-2"
             >
               <img
-                src={`https://cdn.simpleicons.org/${f.slug}/white`}
+                src={`https://cdn.simpleicons.org/${f.slug}`}
                 alt={f.name}
                 loading="lazy"
-                className="size-7 opacity-90"
+                className="size-7"
               />
             </span>
           ))}
