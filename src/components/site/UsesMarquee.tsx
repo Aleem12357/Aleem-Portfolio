@@ -16,8 +16,8 @@ const favourites: { name: string; slug: string }[] = [
 export function UsesMarquee() {
   const doubled = [...favourites, ...favourites];
   return (
-    <div className="panel flex flex-col overflow-hidden p-6">
-      <div className="relative flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+    <div className="panel flex flex-col justify-between overflow-hidden p-6">
+      <div className="relative my-auto overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         <div
           className="flex w-max items-center gap-3"
           style={{ animation: "marquee 30s linear infinite" }}

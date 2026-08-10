@@ -9,22 +9,35 @@ import { Globe } from "@/components/site/Globe";
 import { WhatYouGet } from "@/components/site/WhatYouGet";
 import { UsesMarquee } from "@/components/site/UsesMarquee";
 import { Testimonials } from "@/components/site/Testimonials";
+import { CrystallizedCTA } from "@/components/site/CrystallizedCTA";
 import { experience, profile, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Muhammad Aleem — Full-Stack Developer in Islamabad" },
+      { title: "Muhammad Aleem — Full-Stack Developer & AI Automation Specialist" },
       {
         name: "description",
         content:
-          "Portfolio of Muhammad Aleem, full-stack developer building React, Next.js and Node products. Projects, experience, certificates and contact.",
+          "Official portfolio of Muhammad Aleem. Full-Stack Developer & AI Specialist building React, Next.js, Node.js, and Supabase web applications.",
       },
-      { property: "og:title", content: "Muhammad Aleem — Full-Stack Developer" },
+      {
+        name: "keywords",
+        content:
+          "Muhammad Aleem, Software Engineer Islamabad, Full-Stack Developer, React Developer, Next.js Portfolio, Node.js, AI Automation",
+      },
+      { property: "og:title", content: "Muhammad Aleem — Full-Stack Developer & AI Specialist" },
       {
         property: "og:description",
-        content: "Full-stack developer from Islamabad building fast, typed web products with React and Node.",
+        content:
+          "Full-stack developer from Islamabad building fast, typed web products with React, Next.js, Node, and AI integration.",
       },
+      { property: "og:url", content: "https://aleem-portfolio.vercel.app/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://aleem-portfolio.vercel.app/" },
     ],
   }),
   component: Home,
@@ -111,7 +124,6 @@ function Home() {
         </div>
       </Section>
 
-
       {/* Featured work */}
       <Section eyebrow="Selected work" title="Curated" italic="work">
         <ProjectShowcase />
@@ -165,7 +177,6 @@ function Home() {
             </Link>
           </div>
           <Portrait3D logo />
-
         </div>
       </Section>
 
@@ -174,15 +185,19 @@ function Home() {
         <Testimonials />
       </Section>
 
-
       {/* Experience preview */}
       <Section eyebrow="Work experience" title="Where I've" italic="been">
         <div className="panel divide-y divide-border">
           {experience.slice(0, 4).map((e) => (
-            <div key={e.role + e.company} className="flex flex-col gap-1 p-6 md:flex-row md:items-center md:justify-between">
+            <div
+              key={e.role + e.company}
+              className="flex flex-col gap-1 p-6 md:flex-row md:items-center md:justify-between"
+            >
               <div>
                 <div className="text-lg">{e.role}</div>
-                <div className="text-sm text-muted-foreground">{e.company} · {e.location}</div>
+                <div className="text-sm text-muted-foreground">
+                  {e.company} · {e.location}
+                </div>
               </div>
               <div className="font-mono text-xs text-muted-foreground">{e.period}</div>
             </div>
@@ -192,23 +207,7 @@ function Home() {
 
       {/* CTA */}
       <Section>
-        <div
-          className="relative overflow-hidden rounded-3xl border border-border px-6 py-16 text-center"
-          style={{ background: "var(--gradient-brand)" }}
-        >
-          <h2 className="text-4xl text-primary-foreground md:text-5xl">
-            From concept to creation — <span className="italic">let's make it happen</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-primary-foreground/85">
-            I'm available for full-time roles and freelance projects.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm text-foreground"
-          >
-            Book a chat <ArrowUpRight className="size-4" />
-          </Link>
-        </div>
+        <CrystallizedCTA />
       </Section>
     </PageShell>
   );

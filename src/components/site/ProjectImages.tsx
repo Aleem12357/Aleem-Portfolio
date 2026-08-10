@@ -1,24 +1,40 @@
+import { useIsScrolling } from "@/hooks/useIsScrolling";
+
 export function ProjectImages({ images, alt }: { images: string[]; alt: string }) {
   const front = images[0];
   const back = images[1] ?? images[0];
-
-  const base =
-    "absolute rounded-xl border border-primary-foreground/15 object-cover transition-all duration-500 ease-out";
+  const isScrolling = useIsScrolling(180);
 
   return (
-    <div className="group/img relative mt-6 h-52 w-full overflow-hidden sm:h-64">
+    <div
+      className={`group/img relative mt-6 flex h-60 w-full items-center justify-center overflow-hidden rounded-2xl p-2 sm:h-80 ${
+        isScrolling ? "pointer-events-none" : ""
+      }`}
+    >
+      {/* Main image (Default in front, z-20) */}
+      <img
+        src={front}
+        alt={`${alt} main screenshot`}
+        loading="lazy"
+        decoding="async"
+        className={`pointer-events-none absolute left-2 top-2 h-[92%] w-[72%] rounded-xl border border-white/20 object-contain bg-[#0a121e]/90 shadow-xl transition-all duration-500 ease-out transform-gpu z-20 ${
+          !isScrolling ? "group-hover:z-10 group-hover:scale-95 group-hover:opacity-75" : ""
+        }`}
+      />
+      {/* Secondary image (Default behind z-10; Moves up to front z-30 on hover when scroll is idle) */}
       <img
         src={back}
         alt={`${alt} secondary screenshot`}
         loading="lazy"
-        className={`${base} inset-x-8 top-0 bottom-10 z-0 opacity-70 shadow-lg group-hover/img:inset-x-0 group-hover/img:top-10 group-hover/img:bottom-0 group-hover/img:z-10 group-hover/img:opacity-100`}
-      />
-      <img
-        src={front}
-        alt={`${alt} screenshot`}
-        loading="lazy"
-        className={`${base} inset-x-0 top-10 bottom-0 z-10 shadow-2xl group-hover/img:inset-x-8 group-hover/img:top-0 group-hover/img:bottom-10 group-hover/img:z-0 group-hover/img:opacity-70`}
+        decoding="async"
+        className={`pointer-events-none absolute right-2 bottom-2 h-[92%] w-[72%] rounded-xl border border-white/15 object-contain bg-[#0a121e]/90 shadow-lg transition-all duration-500 ease-out transform-gpu z-10 ${
+          !isScrolling
+            ? "group-hover:z-30 group-hover:scale-105 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            : ""
+        }`}
       />
     </div>
   );
 }
+
+

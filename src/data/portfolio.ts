@@ -2,21 +2,22 @@ export const profile = {
   name: "Muhammad Aleem",
   role: "Full-Stack Developer",
   location: "Islamabad, Pakistan",
-  email: "aleem123579@gmail.com",
+  email: "aleem12357@gmail.com",
   phone: "+92 315 5196967",
+  whatsapp: "https://wa.me/923155196967",
   github: "https://github.com/Aleem12357",
   linkedin: "https://www.linkedin.com/in/muhammadAleem123579/",
   blurb:
-    "I'm Muhammad Aleem, a final-year Software Engineering student (CGPA 3.95) and full-stack developer. From frontend to backend, I thrive on solving complex problems with clean, efficient code — React, Next.js, Vue and Node are my daily tools.",
+    "I'm Muhammad Aleem, a full-stack developer and AI automation specialist. From frontend to backend, I thrive on solving complex problems with clean, efficient code — React, Next.js, Vue and Node are my daily tools.",
   blurb2:
-    "Currently an Associate Business Analyst at Zweidevs, and a Teaching Assistant for OOP labs at the University of Central Punjab. I like shipping products, mentoring students and learning something new every week.",
+    "I build scalable web products and intelligent automation workflows. Whether it's shipping a production app, integrating AI-driven features, or architecting an entire platform — I deliver clean code that works at scale.",
 };
 
 export const stats = [
-  { value: "3.95", label: "CGPA" },
+  { value: "12+", label: "Projects shipped" },
   { value: "6+", label: "Roles held" },
   { value: "14+", label: "Public repos" },
-  { value: "3rd", label: "of 175+ FYPs" },
+  { value: "AI", label: "Automation" },
 ];
 
 export type Experience = {
@@ -28,6 +29,16 @@ export type Experience = {
 };
 
 export const experience: Experience[] = [
+  {
+    role: "Freelance Full-Stack Developer",
+    company: "Self-Employed",
+    period: "2024 — Present (2 years)",
+    location: "Remote",
+    points: [
+      "Built custom web applications, full-stack solutions, and automated workflows for diverse global clients.",
+      "Delivered responsive frontend interfaces with React and Next.js alongside Node.js and Supabase backends.",
+    ],
+  },
   {
     role: "Associate Business Analyst",
     company: "Zweidevs",
@@ -78,9 +89,7 @@ export const experience: Experience[] = [
     company: "University of Central Punjab",
     period: "Nov 2024 — Feb 2025",
     location: "Lahore, Pakistan",
-    points: [
-      "Supported OOP lab sessions and one-on-one concept clarification.",
-    ],
+    points: ["Supported OOP lab sessions and one-on-one concept clarification."],
   },
   {
     role: "Student Pedagogy Partnership",
@@ -104,129 +113,237 @@ export type Project = {
   year: string;
   category: string;
   images: string[];
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "digital-diary",
     category: "Web App",
-    images: ["/projects/digital-diary-1.svg", "/projects/digital-diary-2.svg"],
+    images: ["/projects/digital-diary-1.webp", "/projects/digital-diary-2.webp"],
     title: "Digital Diary",
-    tagline: "School management portal with AI career guidance",
+    tagline:
+      "A full-stack school management portal with AI-driven career guidance, role-based access, and real-time collaboration.",
     description:
-      "A full-stack school management portal where teachers, students and parents manage grades, track behaviour and communicate in one place. Placed 3rd out of 175+ projects at the UCP FYP Open House.",
-    stack: ["MongoDB", "Express", "React", "Node.js", "Python"],
+      "A full-stack school management portal designed to streamline communication between teachers, parents, and students. Features role-based dashboards, automated grade and attendance tracking, real-time messaging, and an integrated Python AI engine providing personalized career recommendations.",
+    stack: ["MongoDB", "Express.js", "React.js", "Node.js", "Python", "AI/ML"],
     highlights: [
-      "AI-driven recommendation engine suggesting personalised career paths",
-      "Role-based access control with tailored dashboards per user type",
-      "Gamified badges rewarding grades, behaviour and participation",
-      "Real-time chat between teachers, parents and students",
+      "Role-Based Access Control (RBAC) with JWT for Students, Teachers, and Parents",
+      "Python microservice running an AI career recommendation model",
+      "Real-time instant messaging using Socket.io with strict channel isolation",
+      "Gamified student rewards system with performance badges and dynamic leaderboards",
+      "Awarded 3rd Position out of 175+ FYP projects at UCP Open House Exhibition",
     ],
     year: "2025",
+    liveUrl: "https://digital-diary-mydc.vercel.app/",
   },
   {
     slug: "veamkodrive",
     category: "Web App",
-    images: ["/projects/veamkodrive-1.svg", "/projects/veamkodrive-2.svg"],
+    images: ["/projects/veamkodrive-1.webp", "/projects/veamkodrive-2.webp"],
     title: "Veamkodrive",
-    tagline: "Oman automobile marketplace",
+    tagline:
+      "A polished automobile showcase website for an Oman-based car dealership, built with React, TypeScript, and Supabase.",
     description:
-      "A modern automobile platform for the Omani market with listings, search and an admin-managed catalogue backed by Supabase.",
-    stack: ["React", "TypeScript", "Supabase"],
+      "A premium automotive showcase platform built for an international car dealership in Oman. Engineered with React, TypeScript, and Supabase to deliver real-time inventory management, high-performance visual asset delivery, and an intuitive administration workflow.",
+    stack: ["React.js", "TypeScript", "Supabase", "Tailwind CSS", "Vite"],
     highlights: [
-      "Typed data layer with Supabase row level security",
-      "Fast filtering and responsive listing grid",
+      "Supabase Postgres backend with dynamic REST APIs for instant inventory updates",
+      "End-to-end TypeScript architecture ensuring zero runtime type mismatches",
+      "Optimized asset pipeline with lazy loading and Supabase Storage transforms",
+      "Fine-grained Row-Level Security (RLS) policies protecting client admin actions",
     ],
     year: "2026",
+    liveUrl: "https://veamkodrive.vercel.app",
   },
   {
     slug: "unitrix",
-    category: "Web App",
-    images: ["/projects/unitrix-1.svg", "/projects/unitrix-2.svg"],
+    category: "Client Site",
+    images: ["/projects/unitrix-1.webp", "/projects/unitrix-2.webp"],
     title: "Unitrix",
-    tagline: "Study-abroad consultancy platform — in development",
+    tagline:
+      "A modern study-abroad consultancy website redesigned from the ground up with React, TypeScript, and Lovable.",
     description:
-      "A consultancy website helping students discover universities, compare programmes and manage their application journey.",
-    stack: ["React", "TypeScript"],
-    highlights: ["University discovery and comparison", "Application journey tracking"],
+      "A modern, high-converting web platform engineered for a study-abroad consultancy. Designed mobile-first with React, TypeScript, and Tailwind CSS to replace outdated legacy flows with interactive university search, lead generation forms, and fast page speeds.",
+    stack: ["React.js", "TypeScript", "Lovable", "Tailwind CSS", "Vite"],
+    highlights: [
+      "Rapid prototyping and component scaffolding using Lovable and Tailwind CSS",
+      "Mobile-first responsive layouts optimized for high conversion and engagement",
+      "Interactive course search filters and dynamic application guidance forms",
+      "Deployed with automated Vercel CI/CD pipelines and preview environments",
+    ],
     year: "2026",
+    liveUrl: "https://unitrix-refresh.vercel.app",
+  },
+  {
+    slug: "vista-artisan-dreams",
+    category: "Web App",
+    images: ["/projects/unitedestimates1.webp", "/projects/unitedestimates2.webp"],
+    title: "Vista Artisan Dreams",
+    tagline:
+      "A redesigned, visually elevated contractor website with 3D elements, animations, and a tour-guide chatbot — built to win a real client.",
+    description:
+      "A visually immersive spec rebuild of an existing contractor platform, enhanced with interactive 3D elements, smooth micro-animations, and an AI-driven tour-guide bot. Built as an active sales tool to demonstrate modern digital experiences to real prospective clients.",
+    stack: ["React.js", "TypeScript", "Lovable", "Tailwind CSS", "shadcn/ui"],
+    highlights: [
+      "Integrated interactive 3D graphics built with Three.js and Spline",
+      "Built-in interactive AI tour-guide bot that answers client FAQs in real time",
+      "Single-page conversion funnel linked directly to an automated scheduling widget",
+      "Reverse-engineered asset and content architecture for maximum visual impact",
+    ],
+    year: "2026",
+    liveUrl: "https://vista-artisan-dreams.lovable.app",
   },
   {
     slug: "bytely",
     category: "Web App",
-    images: ["/projects/bytely-1.svg", "/projects/bytely-2.svg"],
-    title: "Bytely Auth Module",
-    tagline: "Authentication built twice — Firebase and MERN",
+    images: ["/projects/bytely-1.webp", "/projects/bytely-2.webp"],
+    title: "Bytely",
+    tagline:
+      "A full authentication module featuring Google Sign-In, email/password login, and password reset — built with Vue.js and Firebase.",
     description:
-      "A complete authentication module: Google Sign-In through Firebase plus a custom email/password flow backed by Node, Express and MongoDB.",
-    stack: ["Vue.js", "Firebase", "Node.js", "Express", "MongoDB"],
+      "A robust, production-grade authentication and user management module developed for Byte Force IT Solutions. Features OAuth 2.0 Google Sign-In, email/password verification, secure password reset, and a modular Vue.js component architecture.",
+    stack: ["Vue.js", "Firebase", "Node.js", "Express.js", "MongoDB"],
     highlights: [
-      "Google email authentication with Firebase",
-      "Custom login backed by a MERN API",
-      "Full forgot-password recovery workflow",
-      "Reusable, responsive Vue components",
+      "Firebase Authentication integration for Google OAuth 2.0 and email verification",
+      "Express.js & MongoDB backend for extended user profile metadata management",
+      "Modular Vue 3 component library built for internal team reusability",
+      "Custom Vuelidate validation rules giving real-time feedback on input fields",
     ],
     year: "2025",
+    liveUrl: "https://bytely.ai/",
   },
   {
-    slug: "ezi",
-    category: "Website",
-    images: ["/projects/ezi-1.svg", "/projects/ezi-2.svg"],
-    title: "EZI Website",
-    tagline: "Re-engineered service site for Canadian cities",
-    description:
-      "Redesigned the EZI marketing site in Next.js and shipped new city and service pages for Ottawa, Toronto, Gatineau and Montreal while keeping design consistency intact.",
-    stack: ["Next.js", "Tailwind CSS"],
-    highlights: ["Four new city landing pages", "New service pages such as snow removal"],
-    year: "2025",
-  },
-  {
-    slug: "passop",
+    slug: "ezi-website",
     category: "Web App",
-    images: ["/projects/passop-1.svg", "/projects/passop-2.svg"],
-    title: "PassOP — Password Manager",
-    tagline: "Secure, responsive password vault",
+    images: ["/projects/ezi-1.webp", "/projects/ezi-2.webp"],
+    title: "Ezi Website",
+    tagline:
+      "A Next.js re-engineering project — overhauled design, new city pages, and city-specific service pages for a Canadian home services brand.",
     description:
-      "A password manager with secure storage, quick copy/edit/delete actions and persistence through MongoDB plus local storage fallback.",
-    stack: ["React", "Vite", "Tailwind CSS", "Express", "MongoDB"],
-    highlights: ["Secure credential storage", "One-click copy, edit and delete", "Works across all screen sizes"],
+      "A complete Next.js re-engineering project for a major Canadian home services brand operating across Ottawa, Toronto, Gatineau, and Montreal. Engineered dynamic local routing to generate city-specific service pages, significantly boosting local SEO rankings.",
+    stack: ["Next.js", "React.js", "Tailwind CSS", "Elementor"],
+    highlights: [
+      "Dynamic Next.js file-based routing architecture for local city/service pages",
+      "Standardized component layouts ensuring design consistency across regional sub-pages",
+      "Optimized image loading and performance metrics for fast mobile rendering",
+      "Converted custom Elementor design specifications into clean React code",
+    ],
+    year: "2025",
+    liveUrl: "https://ezi.services/",
+  },
+  {
+    slug: "password-manager",
+    category: "Web App",
+    images: ["/projects/passop-1.webp", "/projects/passop-2.webp"],
+    title: "PassOP – Password Manager",
+    tagline:
+      "A MERN stack password manager with secure storage, clipboard copy, and full CRUD — built to learn full-stack development end to end.",
+    description:
+      "A full-stack MERN application built to provide local and cloud password management. Features instant searching, one-click clipboard copying, encrypted-at-rest field persistence, and full CRUD operations without page reloads.",
+    stack: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS", "Vite"],
+    highlights: [
+      "Dual-layer storage combining cloud MongoDB persistence with fallback localStorage",
+      "One-click clipboard copy utility using modern browser native Clipboard APIs",
+      "Full CRUD capability with instant React state updates and zero page reloads",
+      "Clean, responsive dark-themed UI styled with Tailwind CSS utilities",
+    ],
     year: "2024",
+    liveUrl: "https://password-manager-mern-stack.vercel.app/",
   },
   {
     slug: "textutils",
-    category: "Web App",
-    images: ["/projects/textutils-1.svg", "/projects/textutils-2.svg"],
+    category: "Utility App",
+    images: ["/projects/textutils-1.webp", "/projects/textutils-2.webp"],
     title: "TextUtils",
-    tagline: "Text manipulation toolkit",
+    tagline:
+      "A React text manipulation tool — case conversion, extra space removal, text-to-speech, and one-click clipboard copy.",
     description:
-      "A versatile text utility: strip extra spaces, convert cases, copy to clipboard and listen to text with built-in speech synthesis.",
-    stack: ["React", "Bootstrap", "JavaScript"],
-    highlights: ["Text-to-speech accessibility", "Case conversion and cleanup", "Clipboard integration"],
+      "A lightweight, browser-native text processing suite built with React. Offers instant case conversion, extra whitespace stripping, character/word metrics, text-to-speech playback, and one-click clipboard extraction.",
+    stack: ["React.js", "HTML", "Bootstrap", "CSS", "JavaScript"],
+    highlights: [
+      "Zero external dependencies using native browser Web Speech API for text-to-speech",
+      "Real-time character, word, and reading time counter with live state updates",
+      "One-click text cleanup routines (case transformations, extra space removal)",
+      "Clean controlled component design handling multi-step string transformations",
+    ],
     year: "2024",
+    liveUrl: "https://aleem12357.github.io/TextUtils-React/",
   },
   {
-    slug: "mini-search-engine",
-    category: "Systems",
-    images: ["/projects/mini-search-engine-1.svg", "/projects/mini-search-engine-2.svg"],
-    title: "Mini Search Engine",
-    tagline: "Hash-table indexing and boolean retrieval in C++",
+    slug: "twitter-clone",
+    category: "UI Clone",
+    images: ["/projects/twitterclone1.webp", "/projects/twitterclone2.webp"],
+    title: "Twitter Clone",
+    tagline:
+      "A static Twitter UI clone built with HTML, CSS, Tailwind CSS, and JavaScript — focused on responsive layout and component recreation.",
     description:
-      "A document search engine that tokenises and indexes collections into hash tables, then retrieves matches with AND/OR boolean queries.",
-    stack: ["C++", "Data Structures"],
-    highlights: ["Hash-table indexing phase", "Boolean AND/OR query handling"],
-    year: "2023",
+      "A pixel-perfect frontend clone of Twitter's complex 3-column desktop and mobile interface. Stress-tests Tailwind CSS utilities and vanilla JavaScript to deliver interactive tweet feeds, sticky sidebars, and responsive UI components.",
+    stack: ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+    highlights: [
+      "Pixel-accurate 3-column layout built with Tailwind CSS Flexbox & Grid",
+      "Sticky sidebar navigation and trending panel matching Twitter desktop UX",
+      "Interactive like, retweet, and bookmark state toggles via JavaScript event handlers",
+      "Fully responsive design collapsing sidebars cleanly on mobile viewports",
+    ],
+    year: "2024",
+    liveUrl: "https://aleem12357.github.io/TwitterClone/",
+  },
+  {
+    slug: "bmw-website",
+    category: "Multi-page Site",
+    images: ["/projects/bmw1.webp", "/projects/bmw2.webp"],
+    title: "BMW Website Clone",
+    tagline:
+      "A multi-page BMW website clone with Home, About, Contact, and Car Models pages — built with HTML, Bootstrap, CSS, and JavaScript.",
+    description:
+      "A multi-page automotive showcase site replicating BMW's luxury digital brand. Built with HTML, CSS, Bootstrap, and JavaScript to deliver responsive car model showcases, interactive navigation menus, and clean page layouts.",
+    stack: ["HTML", "Bootstrap", "CSS", "JavaScript"],
+    highlights: [
+      "Multi-page structure (Home, About, Models, Contact) with uniform navigation",
+      "Customized Bootstrap 5 grid layout tailored to luxury automotive aesthetics",
+      "Interactive car model showcase cards with smooth hover transitions",
+      "Responsive mobile navigation drawer and vanilla JS scroll interactions",
+    ],
+    year: "2024",
+    liveUrl: "https://aleem12357.github.io/BMW-website/index.html",
+  },
+  {
+    slug: "todo-list",
+    category: "CRUD App",
+    images: ["/projects/todolist1.webp", "/projects/todolist2.webp"],
+    title: "To-Do List App",
+    tagline:
+      "A React task manager with Tailwind CSS — add, complete, and delete tasks with a clean, minimal interface.",
+    description:
+      "A refined React productivity app designed with Tailwind CSS. Demonstrates immutable state management patterns, local storage state persistence, task filtering, and smooth task completion animations.",
+    stack: ["React.js", "Tailwind CSS", "CSS", "JavaScript"],
+    highlights: [
+      "Persistent task storage using React useEffect hooks synchronized with localStorage",
+      "Functional immutable state updates preventing state mutation bugs",
+      "One-click task completion toggles, deletion, and inline editing workflows",
+      "Responsive minimal UI designed with Tailwind CSS utility classes",
+    ],
+    year: "2024",
+    liveUrl: "https://todo-list-tau-lilac.vercel.app/",
   },
   {
     slug: "clearclutter",
     category: "CLI Tool",
-    images: ["/projects/clearclutter-1.svg", "/projects/clearclutter-2.svg"],
+    images: ["/projects/clearclutter-1.webp", "/projects/clearclutter-2.webp"],
     title: "ClearClutter",
-    tagline: "Automated file organiser CLI",
+    tagline:
+      "A Node.js CLI tool that automatically organises a messy folder by sorting files into extension-based subdirectories.",
     description:
-      "A Node.js tool that sorts a messy folder into subfolders by file extension in a single command.",
-    stack: ["Node.js"],
-    highlights: ["Extension-based sorting", "Efficient filesystem operations"],
-    year: "2023",
+      "A high-utility Node.js CLI automation tool that organizes messy directories by automatically scanning, categorizing, and sorting files into extension-based subfolders with collision protection.",
+    stack: ["Node.js", "JavaScript", "fs module"],
+    highlights: [
+      "Zero third-party dependencies utilizing Node.js native fs and path modules",
+      "Automated file classification grouping files by extensions into dedicated subdirectories",
+      "Collision safety logic appending unique identifiers to prevent accidental file overwrites",
+      "Lightweight command-line interface supporting instant execution on any directory",
+    ],
+    year: "2024",
   },
 ];
 
@@ -245,7 +362,18 @@ export const stack = {
     "Selenium",
   ],
   Data: ["MongoDB", "Supabase", "Firebase", "Drizzle ORM", "SQL"],
-  Tools: ["Git", "GitHub", "VS Code", "Cursor", "Postman", "Jira", "Trello", "Figma", "IntelliJ", "Google Colab"],
+  Tools: [
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Cursor",
+    "Postman",
+    "Jira",
+    "Trello",
+    "Figma",
+    "IntelliJ",
+    "Google Colab",
+  ],
 };
 
 export const education = [
@@ -270,17 +398,97 @@ export type Certificate = {
   image?: string;
 };
 
-/**
- * Certificate images: drop files into `public/certificates/` and set
- * `image: "/certificates/your-file.jpg"` on the matching entry below.
- */
 export const certificates: Certificate[] = [
-  { title: "CS50 Python", issuer: "Harvard / Cambridge", year: "2024" },
-  { title: "Data Structures in C++", issuer: "Coursera", year: "2023" },
-  { title: "HTML and CSS", issuer: "Coursera", year: "2023" },
-  { title: "Microsoft Word", issuer: "Coursera", year: "2023" },
-  { title: "Digital Marketing", issuer: "DigiSkills", year: "2022" },
-  { title: "Freelancing", issuer: "DigiSkills", year: "2022" },
+  {
+    title: "CS50's Introduction to Programming with Python",
+    issuer: "Harvard / edX",
+    year: "2024",
+    image: "/certificates/CS50P_Harvard_Certificate.webp",
+  },
+  {
+    title: "Object-Oriented Data Structures in C++",
+    issuer: "Coursera (UIUC)",
+    year: "2023",
+    image: "/certificates/CPP_Classes_and_Objects_Coursera.webp",
+  },
+  {
+    title: "HTML and CSS in Depth",
+    issuer: "Meta / Coursera",
+    year: "2023",
+    image: "/certificates/HTML_CSS_Meta_Coursera.webp",
+  },
+  {
+    title: "Work Smarter with Microsoft Word",
+    issuer: "Coursera",
+    year: "2023",
+    image: "/certificates/Microsoft_Word_Coursera.webp",
+  },
+  {
+    title: "Customer Analytics",
+    issuer: "Wharton / Coursera",
+    year: "2023",
+    image: "/certificates/Customer_Analytics_Wharton.webp",
+  },
+  {
+    title: "Digital Marketing Programme",
+    issuer: "DigiSkills.pk",
+    year: "2022",
+    image: "/certificates/Digital_Marketing_DigiSkills.webp",
+  },
+  {
+    title: "Freelancing Programme",
+    issuer: "DigiSkills.pk",
+    year: "2022",
+    image: "/certificates/Freelancing_DigiSkills.webp",
+  },
+  {
+    title: "Teaching Assistant — OOP Lab (Fall 2025)",
+    issuer: "University of Central Punjab",
+    year: "2025–2026",
+    image: "/certificates/Teaching_Assistant_Fall2025.webp",
+  },
+  {
+    title: "Teaching Assistant — OOP Lab (Fall 2024)",
+    issuer: "University of Central Punjab",
+    year: "2024–2025",
+    image: "/certificates/Teaching_Assistant_Fall2024.webp",
+  },
+  {
+    title: "Student Pedagogy Partnership Program",
+    issuer: "University of Central Punjab",
+    year: "2024–2025",
+    image: "/certificates/Student_Pedagogy_Partnership.webp",
+  },
+  {
+    title: "SochSeSolution Innovation Event (4th Place)",
+    issuer: "GDG / BNU",
+    year: "2025",
+    image: "/certificates/Soch_Se_Solution_GDG.webp",
+  },
+  {
+    title: "HackXV 2023 Hackathon Participant",
+    issuer: "FAST-NUCES / UCP",
+    year: "2023",
+    image: "/certificates/HackXV_2023_Certificate.webp",
+  },
+  {
+    title: "AI & ML Applications Seminar",
+    issuer: "IEEE UCP Student Branch",
+    year: "2024",
+    image: "/certificates/IEEE_AI_ML_Seminar.webp",
+  },
+  {
+    title: "Web3.0 & Decentralized Technologies",
+    issuer: "Confiniti / UCP",
+    year: "2024",
+    image: "/certificates/Confiniti_Session_UCP.webp",
+  },
+  {
+    title: "FYP Open House Exhibition (3rd Place & Volunteer)",
+    issuer: "University of Central Punjab",
+    year: "2024",
+    image: "/certificates/Openhouse_Exhibition_Volunteer.webp",
+  },
 ];
 
 export const activities = [
@@ -296,11 +504,13 @@ export const activities = [
   },
   {
     title: "SochSeSolution Innovation Event — BNU",
-    detail: "Pitched a startup idea, built a working MVP and secured 4th position among competing teams.",
+    detail:
+      "Pitched a startup idea, built a working MVP and secured 4th position among competing teams.",
   },
   {
     title: "Student Ambassador — Blackbox AI",
-    detail: "Represented Blackbox AI on campus, sharing AI tooling content and running community sessions.",
+    detail:
+      "Represented Blackbox AI on campus, sharing AI tooling content and running community sessions.",
   },
   {
     title: "Career Fair 2024 — Cyber Security Society, UCP",
@@ -308,7 +518,8 @@ export const activities = [
   },
   {
     title: "Seminars — IEEE UCP & Confiniti",
-    detail: "Attended AI/ML applications seminar and a Web3.0 session on decentralised technologies.",
+    detail:
+      "Attended AI/ML applications seminar and a Web3.0 session on decentralised technologies.",
   },
 ];
 

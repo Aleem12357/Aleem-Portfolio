@@ -4,7 +4,6 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { openReachOut } from "./reach-out";
 import { ThemeToggle } from "./ThemeToggle";
 
-
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -49,8 +48,8 @@ export function Nav() {
     };
   }, []);
 
-  const pill =
-    "rounded-full px-4 py-2 text-sm outline-none transition-all duration-200 hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-brand/60";
+  const baseBtn =
+    "rounded-full px-4 py-2 text-sm outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand/60";
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
@@ -62,9 +61,11 @@ export function Nav() {
             "var(--shadow-soft), inset 0 1px 0 oklch(1 0 0 / 0.14), inset 0 -1px 0 oklch(0 0 0 / 0.3)",
         }}
       >
-
         <nav className="flex items-center justify-between gap-1">
-          <Link to="/" className="ml-2 font-mono text-xs tracking-[0.28em] text-foreground md:hidden">
+          <Link
+            to="/"
+            className="ml-2 font-mono text-xs tracking-[0.28em] text-foreground md:hidden"
+          >
             M.ALEEM
           </Link>
 
@@ -73,7 +74,11 @@ export function Nav() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`${pill} ${pathname === l.to ? "bg-accent text-accent-foreground" : "text-muted-foreground"}`}
+                className={`${baseBtn} ${
+                  pathname === l.to
+                    ? "bg-accent text-accent-foreground font-medium"
+                    : "text-muted-foreground hover:text-brand"
+                }`}
               >
                 {l.label}
               </Link>
@@ -81,18 +86,20 @@ export function Nav() {
             <button
               onClick={() => setOpenMore((v) => !v)}
               aria-expanded={openMore}
-              className={`${pill} inline-flex items-center gap-1 ${
+              className={`${baseBtn} inline-flex items-center gap-1 ${
                 more.some((m) => m.to === pathname) || openMore
-                  ? "bg-accent text-accent-foreground"
-                  : "text-muted-foreground"
+                  ? "bg-accent text-accent-foreground font-medium"
+                  : "text-muted-foreground hover:text-brand"
               }`}
             >
               More
-              <ChevronDown className={`size-3.5 transition-transform duration-200 ${openMore ? "rotate-180" : ""}`} />
+              <ChevronDown
+                className={`size-3.5 transition-transform duration-200 ${openMore ? "rotate-180" : ""}`}
+              />
             </button>
             <button
               onClick={() => openReachOut("menu")}
-              className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground outline-none transition-all duration-200 hover:bg-accent hover:shadow-[0_6px_20px_-8px_oklch(0_0_0/0.4)] focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-95"
+              className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground outline-none transition-all duration-200 hover:text-brand hover:shadow-[0_6px_20px_-8px_oklch(0_0_0/0.4)] focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-95"
             >
               Book a Call
             </button>
@@ -104,7 +111,7 @@ export function Nav() {
             <button
               aria-label="Toggle menu"
               onClick={() => setOpenMobile((v) => !v)}
-              className="rounded-full p-2 text-muted-foreground"
+              className="rounded-full p-2 text-muted-foreground hover:text-brand"
             >
               {openMobile ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -120,9 +127,11 @@ export function Nav() {
               <Link
                 key={m.to}
                 to={m.to}
-                className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-accent"
+                className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-surface-2 group"
               >
-                <div className="text-sm text-foreground">{m.label}</div>
+                <div className={`text-sm ${pathname === m.to ? "text-brand font-medium" : "text-foreground group-hover:text-brand"}`}>
+                  {m.label}
+                </div>
                 <div className="text-xs text-muted-foreground">{m.desc}</div>
               </Link>
             ))}
@@ -138,8 +147,10 @@ export function Nav() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`block rounded-xl px-3 py-2.5 text-sm ${
-                  pathname === l.to ? "bg-accent text-accent-foreground" : "text-foreground/80"
+                className={`block rounded-xl px-3 py-2.5 text-sm transition-colors ${
+                  pathname === l.to
+                    ? "bg-accent text-accent-foreground font-medium"
+                    : "text-foreground/80 hover:text-brand"
                 }`}
               >
                 {l.label}
@@ -157,7 +168,6 @@ export function Nav() {
             </button>
           </div>
         )}
-
       </div>
     </header>
   );

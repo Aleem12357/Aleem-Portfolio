@@ -78,19 +78,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Muhammad Aleem — Full-Stack Developer" },
+      { title: "Muhammad Aleem — Full-Stack Developer & AI Automation Specialist" },
       {
         name: "description",
-        content: "Portfolio of Muhammad Aleem, full-stack developer building React, Next.js and Node products.",
+        content:
+          "Portfolio of Muhammad Aleem, full-stack developer in Islamabad building high-performance React, Next.js, Node.js, and AI automation products.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Muhammad Aleem, Full-Stack Developer, React Developer, Next.js, Node.js, TypeScript, AI Automation, Software Engineer Islamabad, Web Developer Pakistan, Portfolio",
       },
       { name: "author", content: "Muhammad Aleem" },
-      { property: "og:title", content: "Muhammad Aleem — Full-Stack Developer" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { property: "og:title", content: "Muhammad Aleem — Full-Stack Developer & AI Specialist" },
       {
         property: "og:description",
-        content: "Full-stack developer from Islamabad building fast, typed web products.",
+        content: "Full-stack developer building fast, typed web products with React, Next.js, Node, and AI automation.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:site_name", content: "Muhammad Aleem Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Muhammad Aleem — Full-Stack Developer" },
+      {
+        name: "twitter:description",
+        content: "Full-stack developer building fast, typed web products with React, Next.js, and Node.",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -113,6 +127,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const jsonLdPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Aleem",
+    "jobTitle": "Full-Stack Developer & AI Automation Specialist",
+    "url": "https://aleem-portfolio.vercel.app",
+    "sameAs": [
+      "https://github.com/Aleem12357",
+      "https://www.linkedin.com/in/muhammadAleem123579/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Islamabad",
+      "addressCountry": "PK"
+    },
+    "email": "aleem12357@gmail.com",
+    "knowsAbout": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Node.js",
+      "TypeScript",
+      "Python",
+      "MongoDB",
+      "Supabase",
+      "AI Automation"
+    ]
+  };
+
   return (
     <html lang="en" className="dark">
       <head>
@@ -122,6 +165,10 @@ function RootShell({ children }: { children: ReactNode }) {
             __html:
               "try{var t=localStorage.getItem('theme')||'dark';var e=document.documentElement;e.classList.toggle('light',t==='light');e.classList.toggle('dark',t!=='light')}catch(_){}",
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
         />
       </head>
       <body>

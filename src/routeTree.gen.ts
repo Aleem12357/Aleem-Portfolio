@@ -15,6 +15,8 @@ import { Route as CertificatesRouteImport } from './routes/certificates'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as LinksRouteImport } from './routes/links'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as WorkSlugRouteImport } from './routes/work_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +48,16 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects/$slug',
+  path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/work_/$slug',
+  path: '/work/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +66,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/links': typeof LinksRoute
   '/work': typeof WorkRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +76,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/links': typeof LinksRoute
   '/work': typeof WorkRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +87,30 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/links': typeof LinksRoute
   '/work': typeof WorkRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
+  '/work_/$slug': typeof WorkSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/certificates' | '/contact' | '/links' | '/work'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/certificates'
+    | '/contact'
+    | '/links'
+    | '/work'
+    | '/projects/$slug'
+    | '/work/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/certificates' | '/contact' | '/links' | '/work'
+  to:
+    | '/'
+    | '/about'
+    | '/certificates'
+    | '/contact'
+    | '/links'
+    | '/work'
+    | '/projects/$slug'
+    | '/work/$slug'
   id:
     | '__root__'
     | '/'
@@ -85,6 +119,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/links'
     | '/work'
+    | '/projects/$slug'
+    | '/work_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +130,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   LinksRoute: typeof LinksRoute
   WorkRoute: typeof WorkRoute
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
+  WorkSlugRoute: typeof WorkSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +178,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work_/$slug': {
+      id: '/work_/$slug'
+      path: '/work/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -150,7 +202,19 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   LinksRoute: LinksRoute,
   WorkRoute: WorkRoute,
+  ProjectsSlugRoute: ProjectsSlugRoute,
+  WorkSlugRoute: WorkSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

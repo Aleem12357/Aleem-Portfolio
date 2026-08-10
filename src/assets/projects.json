@@ -1,0 +1,438 @@
+[
+  {
+    "id": 1,
+    "slug": "digital-diary",
+    "title": "Digital Diary",
+    "tagline": "A full-stack school management portal with AI-driven career guidance, role-based access, and real-time collaboration.",
+    "techStack": ["MongoDB", "Express.js", "React.js", "Node.js", "Python", "AI/ML"],
+    "links": {
+      "github": "https://github.com/Aleem12357/Digital-Diary/",
+      "live": "https://digital-diary-mydc.vercel.app/"
+    },
+    "year": "2025",
+    "stats": [
+      { "label": "FYP Exhibition", "value": "3rd / 175+" },
+      { "label": "User Roles", "value": "3" },
+      { "label": "Stack", "value": "MERN + AI" }
+    ],
+    "whyIBuiltThis": "Schools in Pakistan still rely on WhatsApp groups and notebooks to share grades and announcements. Teachers waste hours chasing down attendance sheets, parents are left guessing how their kids are doing, and students get no real career guidance. I wanted to change that — so I built Digital Diary, a single platform where everyone in a school community could connect, track progress, and actually plan for the future. It ended up winning 3rd place out of 175+ projects at UCP's FYP Open House Exhibition.",
+    "howItWorks": "Digital Diary has three portals under one roof — one for students, one for teachers, and one for parents — all sharing a MongoDB database managed through a Node.js/Express backend. Teachers upload grades and behavioral records; the system aggregates them and surfaces a dashboard for parents in real time. An AI recommendation engine built in Python analyses each student's academic profile and interests, then suggests personalized career paths. On top of that, a badge system gamifies performance by awarding achievements for grades, behaviour, and participation. A built-in chat feature ties everyone together so teachers can ping parents directly without leaving the platform.",
+    "keyDecisions": [
+      {
+        "title": "Role-Based Access Control from Day One",
+        "detail": "Rather than bolting on permissions later, I designed the auth system with three distinct JWT-scoped roles from the start. Each role gets a completely different dashboard and API surface, so a parent can never accidentally hit a teacher-only endpoint."
+      },
+      {
+        "title": "Python Microservice for the AI Engine",
+        "detail": "I kept the recommendation logic in a separate Python service instead of cramming it into the Node backend. This let me iterate on the ML model independently and swap it out without touching the main API."
+      },
+      {
+        "title": "Gamification as a Retention Hook",
+        "detail": "Grades alone don't motivate students to check the portal daily. Badges and leaderboards do. I added a points system tied to real academic metrics so the gamification is meaningful, not gimmicky."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Syncing real-time chat with the role system",
+        "detail": "Socket.io rooms had to respect role boundaries — a student shouldn't be able to open a direct channel to another student's parent. Getting the room-creation logic right without creating security holes took several iterations."
+      },
+      {
+        "title": "Training an AI model on limited school data",
+        "detail": "Pakistan's schools don't publish clean student datasets. I had to generate synthetic training data, tune it carefully, and validate outputs against real career trajectories to make recommendations that felt credible rather than random."
+      }
+    ],
+    "whatILearned": "This project forced me to think like a product designer, not just a developer. The tech was challenging, but the harder problem was figuring out what each user type actually needed from the app. I also learned that shipping a working AI integration is less about the model and more about the data pipeline feeding it. And presenting the whole thing to judges and industry professionals at the Open House taught me how to communicate technical decisions to a non-technical audience — a skill I now use every day in my BA role."
+  },
+  {
+    "id": 2,
+    "slug": "veamkodrive",
+    "title": "Veamkodrive",
+    "tagline": "A polished automobile showcase website for an Oman-based car dealership, built with React, TypeScript, and Supabase.",
+    "techStack": ["React.js", "TypeScript", "Supabase", "Tailwind CSS", "Vite"],
+    "links": {
+      "github": "https://github.com/Aleem12357/veamkodrive",
+      "live": "https://veamkodrive.vercel.app"
+    },
+    "year": "2026",
+    "stats": [
+      { "label": "Client", "value": "Oman" },
+      { "label": "Backend", "value": "Supabase" },
+      { "label": "Deployed", "value": "Vercel" }
+    ],
+    "whyIBuiltThis": "A client in Oman needed a professional digital presence for their automobile dealership — something that looked premium enough to sit alongside international car brands online. The brief was clear: make it fast, make it look expensive, and make it easy to browse inventory. I took it as a challenge to build a production-quality client site from scratch using a modern stack.",
+    "howItWorks": "The front end is a React + TypeScript SPA served through Vite, styled entirely with Tailwind CSS for a consistent, responsive design. Supabase handles the backend — acting as a Postgres database with a real-time API layer, so inventory listings can be updated by the client without touching any code. Images and assets are served via Supabase Storage. The whole thing is deployed on Vercel with automatic CI/CD on every push to main.",
+    "keyDecisions": [
+      {
+        "title": "Supabase over a custom Express backend",
+        "detail": "For a dealership site, the client needs to update car listings without calling me every time. Supabase's auto-generated REST API and the table editor give a non-technical user a clean CMS-like experience without me building one from scratch."
+      },
+      {
+        "title": "TypeScript throughout",
+        "detail": "With dynamic inventory data coming from the database, strict typing prevented entire categories of runtime bugs — like trying to render an undefined car model name. It also made refactoring significantly safer."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Image optimisation for a slow connection market",
+        "detail": "Oman's internet infrastructure varies. I had to implement lazy loading and serve correctly sized images through Supabase Storage transforms so the site felt snappy even on mobile data."
+      },
+      {
+        "title": "Handling Supabase Row Level Security",
+        "detail": "Getting RLS policies right so the public can read listings but only authenticated admins can write took careful policy design. A wrong rule either locked everyone out or exposed write access to anyone."
+      }
+    ],
+    "whatILearned": "Working on a real client project outside Pakistan taught me how to manage expectations across time zones and how to translate vague design feedback into concrete code changes. I also got much more comfortable with Supabase as a full backend platform — it's now my go-to for client projects that need a database without the overhead of spinning up a custom server."
+  },
+  {
+    "id": 3,
+    "slug": "unitrix",
+    "title": "Unitrix",
+    "tagline": "A modern study-abroad consultancy website redesigned from the ground up with React, TypeScript, and Lovable.",
+    "techStack": ["React.js", "TypeScript", "Lovable", "Tailwind CSS", "Vite"],
+    "links": {
+      "github": "https://github.com/Aleem12357/unitrix-refresh",
+      "live": "https://unitrix-refresh.vercel.app"
+    },
+    "year": "2026",
+    "stats": [
+      { "label": "Commits", "value": "32" },
+      { "label": "Platform", "value": "Lovable + Vercel" },
+      { "label": "Type", "value": "Client Site" }
+    ],
+    "whyIBuiltThis": "Study-abroad consultancies in Pakistan are everywhere, but their websites usually look like they were built in 2012 — cluttered, slow, and impossible to navigate on mobile. Unitrix needed a refresh that matched the level of professionalism the service was actually offering. The goal was a clean, conversion-focused site that could compete with international consultancies visually.",
+    "howItWorks": "The site is a React + TypeScript SPA scaffolded and accelerated through Lovable, which handles the boilerplate and component structure. I then customised every section — hero, services, testimonials, contact forms — to match the brand. Tailwind CSS keeps the styling consistent and responsive across devices. The final build is deployed on Vercel with instant preview URLs for every branch, which made client feedback rounds much faster.",
+    "keyDecisions": [
+      {
+        "title": "Using Lovable to accelerate scaffolding",
+        "detail": "Rather than starting from a blank Vite app, I used Lovable to generate the initial component structure and then rewrote and extended everything to match the client's brand. It cut setup time significantly and kept the code clean."
+      },
+      {
+        "title": "Mobile-first design",
+        "detail": "Most Pakistani users browse on mobile. I designed every section mobile-first and then expanded to desktop, rather than the reverse. This meant the core experience was always solid before being adapted for larger screens."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Balancing client feedback with design integrity",
+        "detail": "Clients often want to add more content to every section. Keeping the site clean while still incorporating their feedback required learning to push back diplomatically and explain design decisions in plain language."
+      }
+    ],
+    "whatILearned": "This project sharpened my ability to move quickly on client work without cutting corners on quality. Lovable is a powerful accelerator but still requires real frontend skill to produce something that doesn't look AI-generated. I also learned how to structure client feedback rounds so revisions don't spiral into endless loops."
+  },
+  {
+    "id": 4,
+    "slug": "vista-artisan-dreams",
+    "title": "Vista Artisan Dreams",
+    "tagline": "A redesigned, visually elevated contractor website with 3D elements, animations, and a tour-guide chatbot — built to win a real client.",
+    "techStack": ["React.js", "TypeScript", "Lovable", "Tailwind CSS", "shadcn/ui"],
+    "links": {
+      "github": "https://github.com/Aleem12357/unitedestimates",
+      "live": "https://vista-artisan-dreams.lovable.app"
+    },
+    "year": "2026",
+    "stats": [
+      { "label": "Type", "value": "Spec Build" },
+      { "label": "3D", "value": "Three.js / Spline" },
+      { "label": "Features", "value": "Tour Guide Bot" }
+    ],
+    "whyIBuiltThis": "I found a contractor website (360unitedestimates.com) that had solid content but looked completely outdated. I saw an opportunity: rebuild it with a production-grade 3D interface, smooth micro-interactions, and a custom tour-guide bot, then pitch it directly to the owner as a showcase of what their site could look like.",
+    "howItWorks": "Built on React + TypeScript with shadcn/ui and Tailwind CSS, the app combines dark-mode aesthetics with subtle 3D background elements. A custom tour-guide chatbot walks prospective clients through the contractor's services and answers FAQs in real time. The layout is structured as a single-page marketing funnel optimized for conversion, leading visitors directly to a calendar booking widget.",
+    "keyDecisions": [
+      {
+        "title": "Proactive spec work as a sales tool",
+        "detail": "Instead of cold-pitching a redesign with mockups, I built the actual thing. A live, clickable site is a far more convincing pitch than a PDF. The risk was building something for free, but the upside was a real differentiator."
+      },
+      {
+        "title": "Tour-guide bot for onboarding new visitors",
+        "detail": "Contractor services can feel abstract. Adding a chatbot that greets visitors and offers tailored walkthroughs improved session duration and made the site feel significantly more interactive."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Reverse-engineering content without access to original assets",
+        "detail": "I had to reverse-engineer the structure of the original site from the live version alone — no design files, no CMS access. This meant inferring content hierarchy and recreating assets from scratch."
+      }
+    ],
+    "whatILearned": "Spec work is uncomfortable because you're investing time with no guaranteed return. But building a live demo taught me more about persuasive design — what makes a visitor stay, click, and convert — than any course. It also confirmed that the fastest path to landing a client is sometimes just showing them what's possible."
+  },
+  {
+    "id": 5,
+    "slug": "bytely",
+    "title": "Bytely",
+    "tagline": "A full authentication module featuring Google Sign-In, email/password login, and password reset — built with Vue.js and Firebase.",
+    "techStack": ["Vue.js", "Firebase", "Node.js", "Express.js", "MongoDB"],
+    "links": {
+      "github": "https://github.com/Aleem12357/bytely",
+      "live": "https://bytely.ai/"
+    },
+    "year": "2025",
+    "stats": [
+      { "label": "Company", "value": "Byte Force IT" },
+      { "label": "Auth", "value": "Firebase + Google" },
+      { "label": "Frontend", "value": "Vue.js" }
+    ],
+    "whyIBuiltThis": "At Byte Force IT Solutions, the Bytely product needed a robust, polished authentication system. The client wanted both social login (Google) and traditional email/password flows, with a complete forgot-password experience. I was brought in as a junior developer to design and ship this module from scratch.",
+    "howItWorks": "The frontend is built in Vue.js with a custom component library styled to match Bytely's dark aesthetic. Firebase Authentication handles OAuth 2.0 flows for Google Sign-In and email verification tokens, while a lightweight Node.js/Express service handles custom user profile metadata stored in MongoDB. Form validation uses custom Vuelidate rules for instant feedback on password strength and email formats.",
+    "keyDecisions": [
+      {
+        "title": "Firebase for social auth, custom backend for credentials",
+        "detail": "Google OAuth is hard to get right securely from scratch. Offloading social auth to Firebase saved days of development while keeping user credentials safe. For custom app metadata, we routed through our own Express API."
+      },
+      {
+        "title": "Reusable Vue component library",
+        "detail": "Auth inputs, buttons, and error banners were extracted into standalone Vue components so other team members could reuse them across the rest of the Bytely dashboard without re-styling."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Handling Firebase OAuth redirects cleanly on mobile browsers",
+        "detail": "Google OAuth popup flows often fail or get blocked by mobile safari. Switching to a full redirect flow with state persistence fixed the issue across all devices."
+      }
+    ],
+    "whatILearned": "Working at Byte Force IT was my first experience shipping code to a production product used by real end-users. I learned Vue.js on the job, got comfortable with Firebase Auth lifecycle hooks, and realized how much edge-case handling goes into an auth flow that feels effortless."
+  },
+  {
+    "id": 6,
+    "slug": "ezi-website",
+    "title": "Ezi Website",
+    "tagline": "A Next.js re-engineering project — overhauled design, new city pages, and city-specific service pages for a Canadian home services brand.",
+    "techStack": ["Next.js", "React.js", "Tailwind CSS", "Elementor"],
+    "links": {
+      "github": "https://github.com/Aleem12357/ezi-services",
+      "live": "https://ezi.services/"
+    },
+    "year": "2025",
+    "stats": [
+      { "label": "Company", "value": "Byte Force IT" },
+      { "label": "Client", "value": "Canada" },
+      { "label": "Framework", "value": "Next.js" }
+    ],
+    "whyIBuiltThis": "Ezi is a Canadian home services company operating across Ottawa, Toronto, Gatineau, and Montreal. The existing website had a dated design and no city-specific landing pages — missing out on local SEO. At Byte Force IT, I was tasked with overhauling the visual design and building out new dedicated pages for each target market.",
+    "howItWorks": "The site is built with Next.js using dynamic routing for city and service combinations (e.g. /ottawa/plumbing). Content structure is driven by reusable React layout components styled with Tailwind CSS. Elementor templates were produced during the design phase to show options to the client before implementation.",
+    "keyDecisions": [
+      {
+        "title": "Templated city/service page structure",
+        "detail": "Rather than hardcoding 16 separate page files, I built a dynamic routing template that accepts city and service parameters, fetching localized content and SEO tags dynamically. This cut maintenance overhead dramatically."
+      },
+      {
+        "title": "Design consistency across city pages",
+        "detail": "Different cities needed distinct local messaging without feeling like completely different websites. Standardizing card layouts and hero sections maintained brand cohesion across all regions."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Working within an existing codebase I didn't write",
+        "detail": "Inheriting someone else's Next.js project meant understanding their routing conventions, component patterns, and CSS approach before touching anything. Getting up to speed without breaking existing pages was the hardest part of the first week."
+      }
+    ],
+    "whatILearned": "I learned how to navigate and extend an existing production codebase responsibly. Next.js's file-based routing made adding new pages clean, but I also understood why a well-structured codebase matters — the existing code's inconsistencies slowed me down more than the actual feature work."
+  },
+  {
+    "id": 7,
+    "slug": "password-manager",
+    "title": "PassOP – Password Manager",
+    "tagline": "A MERN stack password manager with secure storage, clipboard copy, and full CRUD — built to learn full-stack development end to end.",
+    "techStack": ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS", "Vite"],
+    "links": {
+      "github": "https://github.com/Aleem12357/Password-Manager-MERN-Stack/",
+      "live": "https://password-manager-mern-stack.vercel.app/"
+    },
+    "year": "2024",
+    "stats": [
+      { "label": "Stack", "value": "MERN" },
+      { "label": "Storage", "value": "MongoDB + LocalStorage" },
+      { "label": "Features", "value": "CRUD + Clipboard" }
+    ],
+    "whyIBuiltThis": "I wanted a project that would force me to wire together a complete full-stack application from scratch — no tutorials, no starters. Password management is a relatable problem with real security considerations, which made it a better learning ground than a to-do list. Building something I'd actually use kept me motivated throughout.",
+    "howItWorks": "The React frontend talks to an Express API that performs CRUD operations on a MongoDB collection. Passwords are stored in MongoDB for persistence, with localStorage as a fallback for offline access. The UI lets users add a site name, username, and password, then copy any field to clipboard with a single click. Edit and delete operations are handled in-place without page reloads. Tailwind CSS keeps the interface clean and responsive.",
+    "keyDecisions": [
+      {
+        "title": "Dual storage: MongoDB + localStorage",
+        "detail": "Relying solely on a cloud database means the app breaks when the server is down. Syncing to localStorage as well gives offline resilience — the user can still access their passwords even when the backend isn't reachable."
+      },
+      {
+        "title": "Clipboard API over form copying",
+        "detail": "Selecting and copying a password manually is error-prone. Using the Clipboard API to copy with a button click improves usability significantly, especially for long generated passwords."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Deciding how much security to implement",
+        "detail": "A real password manager needs end-to-end encryption. For this learning project, I made a deliberate call to focus on the full-stack architecture first and document the security limitations clearly. Understanding where the security gaps are is itself a valuable learning outcome."
+      }
+    ],
+    "whatILearned": "This was the project that made me confident in the MERN stack. Wiring a React frontend to an Express backend with MongoDB for the first time demystified a lot of concepts I'd only read about. I also learned that even small UX details — like a clipboard copy button — have a big impact on how usable an app feels."
+  },
+  {
+    "id": 8,
+    "slug": "textutils",
+    "title": "TextUtils",
+    "tagline": "A React text manipulation tool — case conversion, extra space removal, text-to-speech, and one-click clipboard copy.",
+    "techStack": ["React.js", "HTML", "Bootstrap", "CSS", "JavaScript"],
+    "links": {
+      "github": "https://github.com/Aleem12357/TextUtils-React/",
+      "live": "https://aleem12357.github.io/TextUtils-React/"
+    },
+    "year": "2024",
+    "stats": [
+      { "label": "Features", "value": "5+" },
+      { "label": "Framework", "value": "React" },
+      { "label": "Type", "value": "Utility App" }
+    ],
+    "whyIBuiltThis": "TextUtils was my first real React project. I wanted to build something with actual utility — a tool I could use when cleaning up copy for other projects. Text case conversion and whitespace cleanup are the kinds of repetitive tasks that waste minutes every day, and I figured building the solution would teach me React state management better than any todo app would.",
+    "howItWorks": "The app is a single-page React application with a controlled textarea component at its centre. Every button (uppercase, lowercase, sentence case, title case, remove spaces, clear) triggers a state update that transforms the textarea value in place. The word and character count updates live as the user types. Text-to-speech uses the browser's native SpeechSynthesis API, so no external libraries are needed. Clipboard copy uses the Clipboard API.",
+    "keyDecisions": [
+      {
+        "title": "Browser-native APIs over libraries",
+        "detail": "Both text-to-speech and clipboard copying are available natively in modern browsers. Reaching for a library would have added bundle weight for no real benefit. Using native APIs kept the app lightweight and dependency-free."
+      },
+      {
+        "title": "Live character and word count",
+        "detail": "Static text tools feel sluggish. Showing live stats as the user types makes the tool feel responsive and gives immediate feedback — especially useful when working within a character limit."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Managing controlled component state cleanly",
+        "detail": "With multiple transformations chained together, I had to be careful about when state updates happened. Applying multiple transforms at once (e.g., uppercase then remove spaces) required composing them correctly to avoid stale state issues."
+      }
+    ],
+    "whatILearned": "TextUtils was where I genuinely understood React's controlled component pattern. Before this, I'd follow tutorials without fully grasping why state drove the UI. Building every interaction from scratch — where every button is a pure function transforming a string — made the data-flow model click. It also taught me that useful tools don't need to be complex."
+  },
+  {
+    "id": 9,
+    "slug": "twitter-clone",
+    "title": "Twitter Clone",
+    "tagline": "A static Twitter UI clone built with HTML, CSS, Tailwind CSS, and JavaScript — focused on responsive layout and component recreation.",
+    "techStack": ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+    "links": {
+      "github": "https://github.com/Aleem12357/TwitterClone/",
+      "live": "https://aleem12357.github.io/TwitterClone/"
+    },
+    "year": "2024",
+    "stats": [
+      { "label": "Type", "value": "UI Clone" },
+      { "label": "Styling", "value": "Tailwind CSS" },
+      { "label": "Focus", "value": "Responsive Layout" }
+    ],
+    "whyIBuiltThis": "Cloning a complex UI like Twitter is one of the best ways to stress-test your CSS skills. The feed layout, sidebar, trending panel, and tweet cards all involve real layout challenges. I built this to cement my understanding of Tailwind CSS and practice building pixel-accurate interfaces from a visual reference.",
+    "howItWorks": "The clone replicates Twitter's three-column layout using Tailwind's flexbox and grid utilities. The tweet feed supports interactions like likes, retweets, and comment counts — implemented with vanilla JavaScript event listeners that toggle button states. The responsive design collapses the sidebar panels at smaller breakpoints, matching Twitter's actual mobile behaviour.",
+    "keyDecisions": [
+      {
+        "title": "Tailwind CSS over custom CSS",
+        "detail": "Twitter's design is utility-heavy — lots of small spacing, border-radius, and color decisions. Tailwind's utility classes map almost directly to the design tokens Twitter uses, which made replication faster and more accurate than writing custom CSS from scratch."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Getting the three-column layout sticky-right",
+        "detail": "Twitter's right sidebar stays fixed while the feed scrolls. Getting sticky positioning to work correctly across breakpoints — without it breaking the layout on tablet widths — required careful overflow and height management."
+      }
+    ],
+    "whatILearned": "Reverse-engineering an existing product's UI taught me more about component-thinking than building from a blank canvas. I learned to look at an interface and immediately break it into reusable layout primitives. I also got a real appreciation for how much work goes into making a layout feel effortless to the user."
+  },
+  {
+    "id": 10,
+    "slug": "bmw-website",
+    "title": "BMW Website Clone",
+    "tagline": "A multi-page BMW website clone with Home, About, Contact, and Car Models pages — built with HTML, Bootstrap, CSS, and JavaScript.",
+    "techStack": ["HTML", "Bootstrap", "CSS", "JavaScript"],
+    "links": {
+      "github": "https://github.com/Aleem12357/BMW-website/",
+      "live": "https://aleem12357.github.io/BMW-website/index.html"
+    },
+    "year": "2024",
+    "stats": [
+      { "label": "Pages", "value": "4" },
+      { "label": "Framework", "value": "Bootstrap" },
+      { "label": "Type", "value": "Multi-page Site" }
+    ],
+    "whyIBuiltThis": "The BMW website is one of the most polished automotive sites on the internet. I cloned it to push my Bootstrap and vanilla JavaScript skills, and to practice building a multi-page site with consistent navigation, responsive grids, and product showcase pages — all without a JavaScript framework.",
+    "howItWorks": "The site has four connected pages — Home, About Us, Contact, and Car Models — sharing a common header and footer built with Bootstrap's navbar component. The Car Models page showcases BMW vehicles with image cards, descriptions, and hover effects. Bootstrap's grid system handles the responsive layout across all breakpoints. JavaScript adds interactive elements including a mobile menu toggle and smooth scroll behaviour.",
+    "keyDecisions": [
+      {
+        "title": "Bootstrap over custom CSS framework",
+        "detail": "For a multi-page site with consistent spacing, typography, and grid — Bootstrap is the right tool. It let me focus on the design recreation rather than reinventing layout utilities, and it taught me how to customise Bootstrap variables to match a brand's visual language."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Maintaining design fidelity without Figma files",
+        "detail": "With no access to BMW's design system, I had to eyeball spacing, font weights, and color values from the live site using browser dev tools. Getting the details right — the exact shade of BMW blue, the precise card spacing — was a lesson in visual accuracy."
+      }
+    ],
+    "whatILearned": "Building a multi-page site without a framework forced me to think about shared state (like mobile menu open/closed) across pages differently. I learned how to structure vanilla JavaScript files to avoid global namespace collisions and how to use Bootstrap's component system without fighting against it."
+  },
+  {
+    "id": 11,
+    "slug": "todo-list",
+    "title": "To-Do List App",
+    "tagline": "A React task manager with Tailwind CSS — add, complete, and delete tasks with a clean, minimal interface.",
+    "techStack": ["React.js", "Tailwind CSS", "CSS", "JavaScript"],
+    "links": {
+      "github": "https://github.com/Aleem12357/todoList/",
+      "live": "https://todo-list-tau-lilac.vercel.app/"
+    },
+    "year": "2024",
+    "stats": [
+      { "label": "Framework", "value": "React" },
+      { "label": "Styling", "value": "Tailwind CSS" },
+      { "label": "Type", "value": "CRUD App" }
+    ],
+    "whyIBuiltThis": "Every developer builds a to-do list at some point — the question is what you learn from it. I built this to understand React hooks (useState, useEffect) properly, and to see how Tailwind CSS pairs with component-based architecture. Rather than rushing through it, I focused on making it feel polished: smooth interactions, clear visual hierarchy, and persistent state.",
+    "howItWorks": "The app uses React's useState to manage the task list — each task has an id, text, and completed status. Adding a task appends to the array; completing one toggles the boolean; deleting removes by id. useEffect syncs the task list to localStorage so tasks survive a page refresh. Tailwind handles all styling with utility classes, including the strikethrough on completed tasks and the hover states on buttons.",
+    "keyDecisions": [
+      {
+        "title": "localStorage persistence",
+        "detail": "A to-do list that forgets everything on refresh is useless. Adding localStorage persistence with a single useEffect hook made the app actually useful while teaching me about the React lifecycle and side effects."
+      },
+      {
+        "title": "Immutable state updates",
+        "detail": "Directly mutating the tasks array was tempting but wrong. I deliberately used spread operators and array methods (map, filter) to produce new arrays on every update — building the functional programming instincts that matter in larger React codebases."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Unique ID generation without a library",
+        "detail": "Tasks need unique IDs for React's key prop and for deletion logic. Rather than importing uuid, I used Date.now() combined with a counter to generate IDs — a simple but effective approach that also taught me why a proper ID strategy matters as state grows."
+      }
+    ],
+    "whatILearned": "The to-do list is deceptively simple. By the time I added persistence, proper deletion, and completion toggling, I had touched nearly every core React concept — state, props, effects, and event handling. I came away with a solid mental model of how React re-renders work and why immutability matters."
+  },
+  {
+    "id": 12,
+    "slug": "clearclutter",
+    "title": "ClearClutter",
+    "tagline": "A Node.js CLI tool that automatically organises a messy folder by sorting files into extension-based subdirectories.",
+    "techStack": ["Node.js", "JavaScript", "fs module"],
+    "links": {
+      "github": "https://github.com/Aleem12357/clearclutter/",
+      "live": null
+    },
+    "year": "2024",
+    "stats": [
+      { "label": "Runtime", "value": "Node.js" },
+      { "label": "Type", "value": "CLI Tool" },
+      { "label": "Dependencies", "value": "Zero" }
+    ],
+    "whyIBuiltThis": "My Downloads folder was a disaster — hundreds of files with no organisation. I kept downloading the same file twice because I couldn't find it, and manually sorting was taking too long. Rather than paying for a folder organiser app, I built one in an afternoon using only Node.js built-in modules. The constraint of using zero external dependencies made it a great exercise in the Node.js standard library.",
+    "howItWorks": "ClearClutter reads a target directory using Node's fs module, groups all files by their extension, and then creates subdirectories (one per extension type) and moves each file into the appropriate folder. If a folder for that extension already exists, it uses the existing one. The script runs from the command line with the target path as an argument. The whole implementation is a single file with no dependencies.",
+    "keyDecisions": [
+      {
+        "title": "Zero dependencies",
+        "detail": "Node.js has everything needed to read directories, check file types, create folders, and move files built in. Keeping it dependency-free means the tool installs instantly, never has security vulnerabilities from third-party packages, and works on any Node.js environment without an npm install."
+      },
+      {
+        "title": "Extension-based grouping over type-based",
+        "detail": "Grouping by file extension (e.g., creating a /jpg folder rather than an /images folder) is simpler to implement and more transparent to the user. You always know exactly where a file went without having to remember the tool's type-mapping logic."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Handling edge cases: files without extensions and name collisions",
+        "detail": "Some files have no extension (like Makefile or .gitignore) and some folders already contain a file with the same name. I had to handle both — routing extensionless files to a /misc folder and appending a timestamp to filenames on collision to avoid silent overwrites."
+      }
+    ],
+    "whatILearned": "ClearClutter was a reminder that you don't need a framework to build something useful. Working exclusively with Node's fs module forced me to understand the file system API deeply — asynchronous I/O, error handling for missing paths, and the difference between rename (move) and copy-then-delete. It's also one of the most satisfying builds: I use it regularly."
+  }
+]

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ChevronLeft, Github, Linkedin, Mail, Moon, Search, X } from "lucide-react";
+import { ArrowRight, ChevronLeft, Github, Linkedin, Mail, MessageCircle, Moon, Search, X } from "lucide-react";
 import { toast } from "sonner";
 import { profile } from "@/data/portfolio";
 import { useReachOut } from "./reach-out";
@@ -16,15 +16,21 @@ export function ReachOutDialog() {
       toast.error("Write a short message first.");
       return;
     }
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem12357@gmail.com&su=${encodeURIComponent(
       "Hello from your portfolio",
     )}&body=${encodeURIComponent(message)}`;
-    toast.success("Opening your mail app…");
+    
+    window.open(gmailUrl, "_blank");
+    toast.success("Opening Gmail composer to send to aleem12357@gmail.com!");
   }
 
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-background/70 p-4 pt-24 backdrop-blur-sm">
-      <button className="absolute inset-0 cursor-default" aria-label="Close" onClick={() => setOpen(false)} />
+      <button
+        className="absolute inset-0 cursor-default"
+        aria-label="Close"
+        onClick={() => setOpen(false)}
+      />
       <div className="relative w-full max-w-xl animate-scale-in">
         <div className="mb-3 flex items-center gap-2">
           <div className="flex flex-1 items-center gap-2 rounded-full border border-border bg-popover/90 px-4 py-2.5 backdrop-blur-xl">
@@ -68,7 +74,7 @@ export function ReachOutDialog() {
                 </div>
                 <div>
                   <div className="text-sm">Send Aleem a message</div>
-                  <div className="text-xs text-muted-foreground">I read every one</div>
+                  <div className="text-xs text-muted-foreground">Sent to aleem12357@gmail.com</div>
                 </div>
               </div>
               <textarea
@@ -92,26 +98,34 @@ export function ReachOutDialog() {
             </div>
 
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              <button
-                onClick={() => setView("calendar")}
-                className="rounded-2xl border border-border bg-surface-2 p-6 text-center transition-colors hover:border-brand/60"
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-5 text-center transition-colors hover:border-emerald-500"
               >
-                <div className="text-sm">Book a call</div>
-                <div className="mt-1 font-mono text-[0.65rem] text-muted-foreground">30 min · no strings</div>
-              </button>
+                <div className="flex items-center justify-center gap-2 text-sm text-emerald-400 font-medium">
+                  <MessageCircle className="size-4" /> WhatsApp Chat
+                </div>
+                <div className="mt-1 font-mono text-[0.65rem] text-emerald-300">
+                  +92 315 5196967 — Aleem
+                </div>
+              </a>
               <a
                 href={`mailto:${profile.email}`}
-                className="rounded-2xl border border-border bg-surface-2 p-6 text-center transition-colors hover:border-brand/60"
+                className="rounded-2xl border border-border bg-surface-2 p-5 text-center transition-colors hover:border-brand/60"
               >
                 <div className="text-sm">Email me</div>
-                <div className="mt-1 font-mono text-[0.65rem] text-muted-foreground">{profile.email}</div>
+                <div className="mt-1 font-mono text-[0.65rem] text-muted-foreground">
+                  {profile.email}
+                </div>
               </a>
             </div>
 
             <div className="mt-3 grid grid-cols-3 gap-3">
               {[
+                { href: profile.whatsapp, Icon: MessageCircle, label: "WhatsApp" },
                 { href: profile.linkedin, Icon: Linkedin, label: "LinkedIn" },
-                { href: `mailto:${profile.email}`, Icon: Mail, label: "Email" },
                 { href: profile.github, Icon: Github, label: "GitHub" },
               ].map(({ href, Icon, label }) => (
                 <a

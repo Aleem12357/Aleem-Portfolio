@@ -4,7 +4,11 @@ import { Gauge, Rocket, ShieldCheck, Sparkles, Wallet } from "lucide-react";
 const perks = [
   { Icon: Gauge, title: "Loads Instantly", body: "Fast loads, happy users, better rankings." },
   { Icon: Rocket, title: "Scales With You", body: "Built to handle your next 10x of traffic." },
-  { Icon: ShieldCheck, title: "Code You Keep", body: "Typed, tested and documented — yours forever." },
+  {
+    Icon: ShieldCheck,
+    title: "Code You Keep",
+    body: "Typed, tested and documented — yours forever.",
+  },
   { Icon: Wallet, title: "Worth Every Dollar", body: "Senior quality, no agency markup." },
   { Icon: Sparkles, title: "Pixel Perfect", body: "Design handed over exactly as intended." },
 ];

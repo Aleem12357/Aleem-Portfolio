@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Mail, MapPin, Phone, FileText, Link2 } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, FileText, Link2, MessageCircle } from "lucide-react";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { profile } from "@/data/portfolio";
-import aleem from "@/assets/aleem.png.asset.json";
+import aleemPic from "@/assets/Aleempic.png";
 
 export const Route = createFileRoute("/links")({
   head: () => ({
@@ -10,10 +10,14 @@ export const Route = createFileRoute("/links")({
       { title: "Links — Muhammad Aleem's Social Profiles" },
       {
         name: "description",
-        content: "Every way to reach Muhammad Aleem: GitHub, LinkedIn, email and phone in one place.",
+        content:
+          "Every way to reach Muhammad Aleem: GitHub, LinkedIn, WhatsApp, email and phone in one place.",
       },
       { property: "og:title", content: "Links — Muhammad Aleem" },
-      { property: "og:description", content: "All of Muhammad Aleem's profiles and contact links." },
+      {
+        property: "og:description",
+        content: "All of Muhammad Aleem's profiles and contact links.",
+      },
     ],
   }),
   component: Links,
@@ -30,10 +34,21 @@ const groups = [
   {
     label: "Connect",
     items: [
+      { title: "WhatsApp", sub: "+92 315 5196967 — Aleem", href: profile.whatsapp, Icon: MessageCircle },
       { title: "LinkedIn", sub: "in/muhammadAleem123579", href: profile.linkedin, Icon: Linkedin },
       { title: "Email", sub: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
-      { title: "Phone", sub: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}`, Icon: Phone },
-      { title: "Résumé", sub: "Ask and I'll send it over", href: `mailto:${profile.email}?subject=Resume%20request`, Icon: FileText },
+      {
+        title: "Phone",
+        sub: profile.phone,
+        href: `tel:${profile.phone.replace(/\s/g, "")}`,
+        Icon: Phone,
+      },
+      {
+        title: "Résumé",
+        sub: "Ask and I'll send it over",
+        href: `mailto:${profile.email}?subject=Resume%20request`,
+        Icon: FileText,
+      },
     ],
   },
 ];
@@ -45,14 +60,17 @@ function Links() {
         <div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]">
           <aside className="panel h-fit p-6 text-center">
             <img
-              src={aleem.url}
+              src={aleemPic}
               alt="Muhammad Aleem"
               className="mx-auto size-32 rounded-full border border-border object-cover"
             />
             <h2 className="mt-4 text-2xl">{profile.name}</h2>
             <div className="mt-2 flex justify-center gap-2">
               {["Developer", "Student", "TA"].map((t) => (
-                <span key={t} className="rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] text-muted-foreground">
+                <span
+                  key={t}
+                  className="rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] text-muted-foreground"
+                >
                   {t}
                 </span>
               ))}

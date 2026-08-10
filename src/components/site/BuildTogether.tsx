@@ -1,14 +1,44 @@
-import portrait from "@/assets/aleem.png.asset.json";
+import portrait from "@/assets/Aleempic.png";
 import { openReachOut } from "./reach-out";
 
 const avatars = [
   { src: "https://i.pravatar.cc/80?img=12", top: "14%", left: "18%", delay: "0ms", size: "size-9" },
-  { src: "https://i.pravatar.cc/80?img=32", top: "6%", left: "44%", delay: "80ms", size: "size-11" },
-  { src: "https://i.pravatar.cc/80?img=45", top: "18%", left: "76%", delay: "160ms", size: "size-8" },
-  { src: "https://i.pravatar.cc/80?img=58", top: "68%", left: "28%", delay: "120ms", size: "size-10" },
-  { src: "https://i.pravatar.cc/80?img=64", top: "72%", left: "66%", delay: "200ms", size: "size-9" },
+  {
+    src: "https://i.pravatar.cc/80?img=32",
+    top: "6%",
+    left: "44%",
+    delay: "80ms",
+    size: "size-11",
+  },
+  {
+    src: "https://i.pravatar.cc/80?img=45",
+    top: "18%",
+    left: "76%",
+    delay: "160ms",
+    size: "size-8",
+  },
+  {
+    src: "https://i.pravatar.cc/80?img=58",
+    top: "68%",
+    left: "28%",
+    delay: "120ms",
+    size: "size-10",
+  },
+  {
+    src: "https://i.pravatar.cc/80?img=64",
+    top: "72%",
+    left: "66%",
+    delay: "200ms",
+    size: "size-9",
+  },
   { src: "https://i.pravatar.cc/80?img=8", top: "44%", left: "6%", delay: "240ms", size: "size-8" },
-  { src: "https://i.pravatar.cc/80?img=25", top: "40%", left: "90%", delay: "280ms", size: "size-8" },
+  {
+    src: "https://i.pravatar.cc/80?img=25",
+    top: "40%",
+    left: "90%",
+    delay: "280ms",
+    size: "size-8",
+  },
 ];
 
 export function BuildTogether() {
@@ -39,7 +69,7 @@ export function BuildTogether() {
         ))}
 
         <img
-          src={portrait.url}
+          src={portrait}
           alt="Muhammad Aleem portrait"
           loading="lazy"
           className="relative size-32 rounded-full object-cover ring-2 ring-brand/50 transition-transform duration-500 group-hover:scale-105"

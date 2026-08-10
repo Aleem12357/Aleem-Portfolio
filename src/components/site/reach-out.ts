@@ -9,7 +9,6 @@ export function openReachOut(view: View = "menu") {
   window.dispatchEvent(new CustomEvent(EVENT, { detail: view }));
 }
 
-
 export function useReachOut() {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<View>("menu");

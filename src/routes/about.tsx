@@ -1,23 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { activities, education, experience, profile } from "@/data/portfolio";
-import aleem from "@/assets/aleem.png.asset.json";
+import aleem from "@/assets/Aleempic.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Muhammad Aleem — Developer & Teaching Assistant" },
+      { title: "About Muhammad Aleem — Full-Stack Developer & Teaching Assistant" },
       {
         name: "description",
         content:
-          "Muhammad Aleem's story: BS Software Engineering at UCP with a 3.95 CGPA, business analysis at Zweidevs, teaching OOP labs and building full-stack products.",
+          "Background of Muhammad Aleem: BS Software Engineering at UCP (3.95 CGPA), Business Analyst at Zweidevs, teaching OOP labs, and full-stack software development.",
       },
-      { property: "og:title", content: "About Muhammad Aleem" },
+      {
+        name: "keywords",
+        content:
+          "Muhammad Aleem About, Software Engineer Profile, UCP Graduate, Teaching Assistant OOP, Full-Stack Developer Islamabad",
+      },
+      { property: "og:title", content: "About Muhammad Aleem — Developer & Educator" },
       {
         property: "og:description",
-        content: "Education, experience and activities of Muhammad Aleem, full-stack developer in Islamabad.",
+        content:
+          "Education, work experience and academic achievements of Muhammad Aleem, full-stack developer in Islamabad.",
       },
+      { property: "og:url", content: "https://aleem-portfolio.vercel.app/about" },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://aleem-portfolio.vercel.app/about" }],
   }),
   component: About,
 });
@@ -28,10 +38,18 @@ function About() {
       <Section eyebrow="Know about me" title="A developer who likes" italic="the whole stack">
         <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
           <div className="panel overflow-hidden">
-            <img src={aleem.url} alt="Muhammad Aleem" className="aspect-square w-full object-cover" />
+            <div className="relative aspect-[4/3] max-h-80 w-full overflow-hidden bg-surface-2">
+              <img
+                src={aleem}
+                alt="Muhammad Aleem"
+                className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+              />
+            </div>
             <div className="p-5">
-              <div className="text-lg">{profile.name}</div>
-              <div className="text-sm text-muted-foreground">{profile.role} · {profile.location}</div>
+              <div className="text-lg font-display">{profile.name}</div>
+              <div className="text-sm text-muted-foreground">
+                {profile.role} · {profile.location}
+              </div>
             </div>
           </div>
           <div className="space-y-5 text-[0.95rem] leading-relaxed text-muted-foreground">
@@ -48,10 +66,15 @@ function About() {
       <Section eyebrow="Education" title="Where I" italic="studied">
         <div className="panel divide-y divide-border">
           {education.map((e) => (
-            <div key={e.school} className="flex flex-col gap-1 p-6 md:flex-row md:items-center md:justify-between">
+            <div
+              key={e.school}
+              className="flex flex-col gap-1 p-6 md:flex-row md:items-center md:justify-between"
+            >
               <div>
                 <div className="text-lg">{e.school}</div>
-                <div className="text-sm text-muted-foreground">{e.detail} · {e.location}</div>
+                <div className="text-sm text-muted-foreground">
+                  {e.detail} · {e.location}
+                </div>
               </div>
               <div className="font-mono text-xs text-muted-foreground">{e.period}</div>
             </div>
@@ -66,7 +89,9 @@ function About() {
               <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
                 <div>
                   <h3 className="text-2xl">{e.role}</h3>
-                  <div className="text-sm text-muted-foreground">{e.company} · {e.location}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {e.company} · {e.location}
+                  </div>
                 </div>
                 <div className="font-mono text-xs text-muted-foreground">{e.period}</div>
               </div>

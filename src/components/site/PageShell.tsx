@@ -2,14 +2,18 @@ import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { ReachOutDialog } from "./ReachOutDialog";
+import { SiteLoader } from "./SiteLoader";
+import { TourGuideBot } from "./TourGuideBot";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen">
+      <SiteLoader />
       <Nav />
       <main className="pt-28">{children}</main>
       <Footer />
       <ReachOutDialog />
+      <TourGuideBot />
     </div>
   );
 }
