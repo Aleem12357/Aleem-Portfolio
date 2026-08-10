@@ -28,25 +28,39 @@ export function Nav() {
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpenMore(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpenMore(false);
+        setOpenMobile(false);
+      }
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpenMore(false);
+        setOpenMobile(false);
+      }
     }
     document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
   }, []);
 
   const pill =
-    "rounded-full px-4 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground";
+    "rounded-full px-4 py-2 text-sm outline-none transition-all duration-200 hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-brand/60";
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <div
         ref={ref}
-        className="pointer-events-auto relative w-full max-w-2xl rounded-full border border-foreground/10 bg-foreground/[0.06] px-2 py-2 backdrop-blur-2xl backdrop-saturate-150 md:w-auto"
+        className="pointer-events-auto relative w-full max-w-2xl rounded-full border border-foreground/10 bg-background/40 px-2 py-2 backdrop-blur-2xl backdrop-saturate-150 transition-colors hover:border-foreground/20 md:w-auto"
         style={{
           boxShadow:
-            "var(--shadow-soft), inset 0 1px 0 oklch(1 0 0 / 0.12), inset 0 -1px 0 oklch(0 0 0 / 0.25)",
+            "var(--shadow-soft), inset 0 1px 0 oklch(1 0 0 / 0.14), inset 0 -1px 0 oklch(0 0 0 / 0.3)",
         }}
       >
+
         <nav className="flex items-center justify-between gap-1">
           <Link to="/" className="ml-2 font-mono text-xs tracking-[0.28em] text-foreground md:hidden">
             M.ALEEM
