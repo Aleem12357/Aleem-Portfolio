@@ -14,7 +14,7 @@ import { experience, profile, stats } from "@/data/portfolio";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Muhammad Aleem — Full-Stack Developer in Lahore" },
+      { title: "Muhammad Aleem — Full-Stack Developer in Islamabad" },
       {
         name: "description",
         content:
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Muhammad Aleem — Full-Stack Developer" },
       {
         property: "og:description",
-        content: "Full-stack developer from Lahore building fast, typed web products with React and Node.",
+        content: "Full-stack developer from Islamabad building fast, typed web products with React and Node.",
       },
     ],
   }),
@@ -36,7 +36,7 @@ function Home() {
       {/* Hero */}
       <section className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 pb-8 pt-8 md:grid-cols-2 md:pt-16">
         <div>
-          <div className="eyebrow">Software Engineer · Lahore, PK</div>
+          <div className="eyebrow">Software Engineer · Islamabad, PK</div>
           <h1 className="mt-4 text-5xl leading-[1.05] md:text-6xl">
             Full-Stack Developer and
             <br />a little bit of <span className="ital-grad">everything</span>
@@ -104,7 +104,7 @@ function Home() {
           <WhatYouGet />
           <div className="panel overflow-hidden p-6">
             <div className="eyebrow">Flexible with timezones</div>
-            <h3 className="mt-2 text-2xl">Based in Lahore, available globally</h3>
+            <h3 className="mt-2 text-2xl">Based in Islamabad, available globally</h3>
             <Globe />
           </div>
           <UsesMarquee />
@@ -164,7 +164,8 @@ function Home() {
               Work experience <ArrowRight className="size-3.5" />
             </Link>
           </div>
-          <Portrait3D />
+          <Portrait3D logo />
+
         </div>
       </Section>
 

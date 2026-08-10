@@ -15,7 +15,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "About Muhammad Aleem" },
       {
         property: "og:description",
-        content: "Education, experience and activities of Muhammad Aleem, full-stack developer in Lahore.",
+        content: "Education, experience and activities of Muhammad Aleem, full-stack developer in Islamabad.",
       },
     ],
   }),

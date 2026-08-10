@@ -1,12 +1,43 @@
 import { useEffect, useRef } from "react";
 
-const cities = [
-  { name: "Lahore", lat: 31.5, lon: 74.3 },
+type City = { name: string; lat: number; lon: number; hub?: boolean };
+
+const cities: City[] = [
+  { name: "Islamabad", lat: 33.7, lon: 73.0, hub: true },
   { name: "Dubai", lat: 25.2, lon: 55.3 },
+  { name: "Riyadh", lat: 24.7, lon: 46.7 },
+  { name: "Istanbul", lat: 41.0, lon: 29.0 },
+  { name: "Berlin", lat: 52.5, lon: 13.4 },
   { name: "London", lat: 51.5, lon: -0.1 },
   { name: "New York", lat: 40.7, lon: -74 },
+  { name: "Toronto", lat: 43.7, lon: -79.4 },
+  { name: "Sao Paulo", lat: -23.5, lon: -46.6 },
+  { name: "Singapore", lat: 1.35, lon: 103.8 },
   { name: "Tokyo", lat: 35.7, lon: 139.7 },
+  { name: "Sydney", lat: -33.9, lon: 151.2 },
 ];
+
+type Vec = { x: number; y: number; z: number };
+
+function toVec(lat: number, lon: number): Vec {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lon + 180) * (Math.PI / 180);
+  return {
+    x: -Math.sin(phi) * Math.cos(theta),
+    y: Math.cos(phi),
+    z: Math.sin(phi) * Math.sin(theta),
+  };
+}
+
+function slerp(a: Vec, b: Vec, t: number): Vec {
+  const dot = Math.max(-1, Math.min(1, a.x * b.x + a.y * b.y + a.z * b.z));
+  const omega = Math.acos(dot);
+  if (omega < 1e-6) return a;
+  const s = Math.sin(omega);
+  const k1 = Math.sin((1 - t) * omega) / s;
+  const k2 = Math.sin(t * omega) / s;
+  return { x: a.x * k1 + b.x * k2, y: a.y * k1 + b.y * k2, z: a.z * k1 + b.z * k2 };
+}
 
 export function Globe() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -23,7 +54,7 @@ export function Globe() {
 
     // fibonacci sphere points
     const N = 900;
-    const pts: { x: number; y: number; z: number }[] = [];
+    const pts: Vec[] = [];
     for (let i = 0; i < N; i++) {
       const y = 1 - (i / (N - 1)) * 2;
       const r = Math.sqrt(Math.max(0, 1 - y * y));
@@ -31,16 +62,11 @@ export function Globe() {
       pts.push({ x: Math.cos(theta) * r, y, z: Math.sin(theta) * r });
     }
 
-    const cityPts = cities.map((c) => {
-      const phi = (90 - c.lat) * (Math.PI / 180);
-      const theta = (c.lon + 180) * (Math.PI / 180);
-      return {
-        name: c.name,
-        x: -Math.sin(phi) * Math.cos(theta),
-        y: Math.cos(phi),
-        z: Math.sin(phi) * Math.sin(theta),
-      };
-    });
+    const cityPts = cities.map((c) => ({ ...c, ...toVec(c.lat, c.lon) }));
+    const hub = cityPts.find((c) => c.hub)!;
+    const arcs = cityPts
+      .filter((c) => !c.hub)
+      .map((c) => Array.from({ length: 40 }, (_, i) => slerp(hub, c, i / 39)));
 
     function resize() {
       const rect = canvas!.getBoundingClientRect();
@@ -49,6 +75,9 @@ export function Globe() {
     }
     resize();
     window.addEventListener("resize", resize);
+
+    const dotColor = () =>
+      document.documentElement.classList.contains("light") ? "25,30,55" : "255,255,255";
 
     function draw() {
       const w = canvas!.width;
@@ -60,37 +89,61 @@ export function Globe() {
 
       const cos = Math.cos(rot);
       const sin = Math.sin(rot);
-
-      for (const p of pts) {
+      const rgb = dotColor();
+      const project = (p: Vec) => {
         const x = p.x * cos - p.z * sin;
         const z = p.x * sin + p.z * cos;
+        return { px: cx + x * R, py: cy - p.y * R, z };
+      };
+
+      for (const p of pts) {
+        const { px, py, z } = project(p);
         if (z < -0.1) continue;
-        const px = cx + x * R;
-        const py = cy - p.y * R;
-        const a = 0.15 + 0.5 * ((z + 1) / 2);
-        ctx!.fillStyle = `rgba(255,255,255,${a})`;
+        const a = 0.12 + 0.42 * ((z + 1) / 2);
+        ctx!.fillStyle = `rgba(${rgb},${a})`;
         ctx!.beginPath();
         ctx!.arc(px, py, 1.1 * dpr, 0, Math.PI * 2);
         ctx!.fill();
       }
 
-      for (const c of cityPts) {
-        const x = c.x * cos - c.z * sin;
-        const z = c.x * sin + c.z * cos;
-        if (z < 0) continue;
-        const px = cx + x * R;
-        const py = cy - c.y * R;
-        ctx!.fillStyle = "rgba(120,200,255,0.95)";
+      // blue connection arcs from the hub city
+      ctx!.lineWidth = 1.2 * dpr;
+      ctx!.strokeStyle = "rgba(80,150,255,0.55)";
+      for (const arc of arcs) {
+        let started = false;
         ctx!.beginPath();
-        ctx!.arc(px, py, 2.6 * dpr, 0, Math.PI * 2);
+        for (const p of arc) {
+          const { px, py, z } = project(p);
+          if (z < 0) {
+            started = false;
+            continue;
+          }
+          if (!started) {
+            ctx!.moveTo(px, py);
+            started = true;
+          } else {
+            ctx!.lineTo(px, py);
+          }
+        }
+        ctx!.stroke();
+      }
+
+      for (const c of cityPts) {
+        const { px, py, z } = project(c);
+        if (z < 0) continue;
+        ctx!.fillStyle = c.hub ? "rgba(255,120,190,0.98)" : "rgba(110,180,255,0.95)";
+        ctx!.beginPath();
+        ctx!.arc(px, py, (c.hub ? 3.4 : 2.4) * dpr, 0, Math.PI * 2);
         ctx!.fill();
-        ctx!.font = `${9 * dpr}px ui-monospace, monospace`;
-        const label = c.name.toUpperCase();
-        const tw = ctx!.measureText(label).width;
-        ctx!.fillStyle = "rgba(255,255,255,0.10)";
-        ctx!.fillRect(px + 6 * dpr, py - 13 * dpr, tw + 8 * dpr, 14 * dpr);
-        ctx!.fillStyle = "rgba(255,255,255,0.85)";
-        ctx!.fillText(label, px + 10 * dpr, py - 3 * dpr);
+        if (c.hub || z > 0.45) {
+          ctx!.font = `${9 * dpr}px ui-monospace, monospace`;
+          const label = c.name.toUpperCase();
+          const tw = ctx!.measureText(label).width;
+          ctx!.fillStyle = `rgba(${rgb},0.10)`;
+          ctx!.fillRect(px + 6 * dpr, py - 13 * dpr, tw + 8 * dpr, 14 * dpr);
+          ctx!.fillStyle = `rgba(${rgb},0.85)`;
+          ctx!.fillText(label, px + 10 * dpr, py - 3 * dpr);
+        }
       }
 
       rot += 0.0035;
@@ -104,5 +157,11 @@ export function Globe() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="h-64 w-full" aria-label="Rotating globe showing timezones" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="h-64 w-full"
+      aria-label="Rotating globe connecting Islamabad with cities worldwide"
+    />
+  );
 }
