@@ -38,7 +38,7 @@ const iconSlug: Record<string, string> = {
 
 function icon(name: string) {
   const slug = iconSlug[name];
-  return slug ? `https://cdn.simpleicons.org/${slug}/white` : null;
+  return slug ? `https://cdn.simpleicons.org/${slug}` : null;
 }
 
 const rows = [
@@ -65,7 +65,7 @@ function Row({ items, reverse, speed }: { items: string[]; reverse?: boolean; sp
               key={`${item}-${i}`}
               className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg border border-border bg-surface-2 px-3 py-1.5 font-mono text-xs text-muted-foreground"
             >
-              {src && <img src={src} alt="" aria-hidden loading="lazy" className="size-3.5 opacity-90" />}
+              {src && <img src={src} alt="" aria-hidden loading="lazy" className="size-3.5" />}
               {item}
             </span>
           );
