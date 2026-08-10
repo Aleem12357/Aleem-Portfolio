@@ -94,22 +94,23 @@ function Home() {
         ))}
       </section>
 
-      {/* Build together + tech stack */}
-      <Section className="grid gap-3 md:grid-cols-2">
-        <BuildTogether />
-        <TechStackMarquee />
+      {/* Bento: build together, tech stack, what you get, globe, uses */}
+      <Section className="space-y-3">
+        <div className="grid gap-3 md:grid-cols-2">
+          <BuildTogether />
+          <TechStackMarquee />
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <WhatYouGet />
+          <div className="panel overflow-hidden p-6">
+            <div className="eyebrow">Flexible with timezones</div>
+            <h3 className="mt-2 text-2xl">Based in Lahore, available globally</h3>
+            <Globe />
+          </div>
+          <UsesMarquee />
+        </div>
       </Section>
 
-      {/* What you get / globe / uses */}
-      <Section className="grid gap-3 md:grid-cols-3">
-        <WhatYouGet />
-        <div className="panel overflow-hidden p-6">
-          <div className="eyebrow">Flexible with timezones</div>
-          <h3 className="mt-2 text-2xl">Based in Lahore, available globally</h3>
-          <Globe />
-        </div>
-        <UsesMarquee />
-      </Section>
 
       {/* Featured work */}
       <Section eyebrow="Selected work" title="Curated" italic="work">
