@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Muhammad Aleem — Full-Stack Developer" },
       {
         property: "og:description",
-        content: "Full-stack developer from Lahore building fast, typed web products.",
+        content: "Full-stack developer from Islamabad building fast, typed web products.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

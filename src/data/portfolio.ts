@@ -1,7 +1,7 @@
 export const profile = {
   name: "Muhammad Aleem",
   role: "Full-Stack Developer",
-  location: "Lahore, Pakistan",
+  location: "Islamabad, Pakistan",
   email: "aleem123579@gmail.com",
   phone: "+92 315 5196967",
   github: "https://github.com/Aleem12357",
@@ -320,7 +320,7 @@ export const services = [
   },
   {
     eyebrow: "Flexible with timezones",
-    title: "Based in Lahore, available globally",
+    title: "Based in Islamabad, available globally",
     body: "Comfortable overlapping with EU and North American teams — async by default, on call when it matters.",
   },
   {
