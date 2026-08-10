@@ -78,19 +78,23 @@ export function Nav() {
             ))}
             <button
               onClick={() => setOpenMore((v) => !v)}
+              aria-expanded={openMore}
               className={`${pill} inline-flex items-center gap-1 ${
-                more.some((m) => m.to === pathname) ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+                more.some((m) => m.to === pathname) || openMore
+                  ? "bg-accent text-accent-foreground"
+                  : "text-muted-foreground"
               }`}
             >
               More
-              <ChevronDown className={`size-3.5 transition-transform ${openMore ? "rotate-180" : ""}`} />
+              <ChevronDown className={`size-3.5 transition-transform duration-200 ${openMore ? "rotate-180" : ""}`} />
             </button>
             <button
               onClick={() => openReachOut("menu")}
-              className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground transition-colors hover:bg-accent"
+              className="rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground outline-none transition-all duration-200 hover:bg-accent hover:shadow-[0_6px_20px_-8px_oklch(0_0_0/0.8)] focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-95"
             >
               Book a Call
             </button>
+
           </div>
 
           <button
