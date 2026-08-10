@@ -3,7 +3,7 @@
 > **Full-Stack Developer & AI Automation Specialist**  
 > Building high-performance web products, interactive 3D experiences, and intelligent automation workflows.
 
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-aleem--portfolio.vercel.app-00f0ff?style=for-the-badge&logo=vercel)](working)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-aleem--portfolio.vercel.app-00f0ff?style=for-the-badge&logo=vercel)](https://aleem-portfolio-rosy.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Aleem12357-181717?style=for-the-badge&logo=github)](https://github.com/Aleem12357)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammadAleem-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/muhammadAleem123579/)
 [![Email](https://img.shields.io/badge/Email-aleem123579%40gmail.com-EA4335?style=for-the-badge&logo=gmail)](mailto:aleem12357@gmail.com)
