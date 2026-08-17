@@ -118,6 +118,67 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "dental-skin-clinic",
+    category: "Client Site",
+    images: ["/projects/TheDental-SkinClinic1.webp", "/projects/TheDental-SkinClinic2.webp"],
+    title: "The Dental & Skin Clinic",
+    tagline:
+      "A premium, responsive clinical showcase and appointment platform built with modern web technologies.",
+    description:
+      "A high-performance client site for a premier dental and skin clinic. Engineered with clean React architecture to offer dynamic service catalog browsing, client testimonials, and a streamlined booking funnel.",
+    stack: ["React.js", "TypeScript", "Tailwind CSS", "Vite"],
+    highlights: [
+      "Optimized client-acquisition funnel with direct appointment scheduling integrations",
+      "Fully responsive layout rendering pixel-perfectly on both mobile and desktop viewports",
+      "Visual asset pipeline optimized for fast page loads and smooth animations",
+      "Premium, modern dark-themed aesthetics customized to match the clinic's brand style",
+    ],
+    year: "2026",
+    liveUrl: "https://the-dental-skin-clinic.vercel.app/",
+  },
+  {
+    slug: "tiktok-insta-automation",
+    category: "AI Automation",
+    images: [
+      "/projects/automationsSS/tiktok-insta-videoautomation1.png",
+      "/projects/automationsSS/tiktok-insta-videoautomation2.png",
+    ],
+    title: "TikTok & Instagram Video Automation",
+    tagline:
+      "An automated video creation and scheduling system powered by AI models, Python, and webhook actions.",
+    description:
+      "An intelligent automation workflow designed to automatically generate, render, and publish/schedule video content for TikTok and Instagram. Powered by python automation, custom asset assembly pipelines, and API integrations.",
+    stack: ["Python", "AI/ML", "n8n", "Webhook", "API Integration"],
+    highlights: [
+      "Fully automated video assembly using Python scripts and AI generation APIs",
+      "Dynamic scheduling and posting integrations across TikTok and Instagram Graph API",
+      "Automated engagement and comment reply workflows triggered via webhooks",
+      "Visual content dashboard for reviewing queued posts and engagement metrics",
+    ],
+    year: "2026",
+  },
+  {
+    slug: "youtube-automation",
+    category: "AI Automation",
+    images: [
+      "/projects/automationsSS/youtubeAutomation1.png",
+      "/projects/automationsSS/youtubeAutomation2.png",
+    ],
+    title: "YouTube Content Automation",
+    tagline:
+      "A complete channel management automation tool that generates video scripts, voiceovers, and uploads content.",
+    description:
+      "An advanced backend system automating YouTube channel operations. Automatically drafts video concepts, structures scripts with LLMs, synthesizes natural audio voiceovers, compiles video assets, and uploads them to YouTube.",
+    stack: ["Python", "AI/ML", "Node.js", "YouTube API", "n8n"],
+    highlights: [
+      "Script generation and scene structuring powered by OpenAI and Anthropic LLMs",
+      "Realistic voiceover synthesis using leading TTS providers",
+      "Automatic video compilation and metadata generation (titles, descriptions, tags)",
+      "Automated YouTube Data API integration for scheduled uploads and channel updates",
+    ],
+    year: "2026",
+  },
+  {
     slug: "digital-diary",
     category: "Web App",
     images: ["/projects/digital-diary-1.webp", "/projects/digital-diary-2.webp"],

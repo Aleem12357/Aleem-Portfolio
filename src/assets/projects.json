@@ -1,5 +1,113 @@
 [
   {
+    "id": 13,
+    "slug": "dental-skin-clinic",
+    "title": "The Dental & Skin Clinic",
+    "tagline": "A premium, responsive clinical showcase and appointment platform built with modern web technologies.",
+    "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Vite"],
+    "links": {
+      "github": null,
+      "live": "https://the-dental-skin-clinic.vercel.app/"
+    },
+    "year": "2026",
+    "stats": [
+      { "label": "Industry", "value": "Healthcare" },
+      { "label": "Type", "value": "Client Site" },
+      { "label": "Stack", "value": "React + Vite" }
+    ],
+    "whyIBuiltThis": "The client, a premium dental and skin care clinic, needed to establish a highly professional, modern digital presence to build trust with prospective patients. They wanted a sleek, visual-heavy website that showcases their state-of-the-art treatments and enables visitors to book consultations easily.",
+    "howItWorks": "The frontend is constructed using React and TypeScript for strong type safety and component-driven reuse. It utilizes Tailwind CSS for styling and custom animations, resulting in a beautiful dark-mode interface with gold and neutral accent tones. The page structure is optimized for client conversion, guiding users through clinic highlights, treatment options, patient testimonials, and a direct CTA for booking appointments.",
+    "keyDecisions": [
+      {
+        "title": "Dark, premium visual style",
+        "detail": "Clinics often use sterile blue-and-white palettes. We opted for a sophisticated dark theme with warm golden highlights, giving it a high-end luxury feel that aligns with advanced skin and dental aesthetic treatments."
+      },
+      {
+        "title": "Highly responsive components",
+        "detail": "Over 75% of patients book through mobile. We ensured every single grid, card, and slide is highly touch-optimized and responsive."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Delivering high-resolution image assets without slowing performance",
+        "detail": "The site depends heavily on high-quality clinical visuals. I implemented modern Next-Gen formats (.webp), layout lazy-loading, and pre-rendering to maintain quick initial page loads."
+      }
+    ],
+    "whatILearned": "Working on a healthcare brand client site taught me how to communicate premium brand values through web design. I learned how to structure services visually so users get the information they need immediately without clutter, and how crucial trust-building elements like reviews and case studies are for user conversion."
+  },
+  {
+    "id": 14,
+    "slug": "tiktok-insta-automation",
+    "title": "TikTok & Instagram Video Automation",
+    "tagline": "An automated video creation and scheduling system powered by AI models, Python, and webhook actions.",
+    "techStack": ["Python", "AI/ML", "n8n", "Webhook", "API Integration"],
+    "links": {
+      "github": null,
+      "live": null
+    },
+    "year": "2026",
+    "stats": [
+      { "label": "Type", "value": "AI Workflow" },
+      { "label": "Platform", "value": "n8n + Python" },
+      { "label": "Posting", "value": "Automated" }
+    ],
+    "whyIBuiltThis": "Creating social media short-form video content consistently is extremely time-consuming. I wanted to design an end-to-end automated system that could brainstorm trending video ideas, assemble relevant media clips, generate voiceovers, overlays, and background music, and publish them to TikTok and Instagram automatically, allowing creator channels to run completely on autopilot.",
+    "howItWorks": "An n8n workflow serves as the orchestrator. It triggers daily schedules, polls trending topics, and invokes Python scripts that run image/video generation APIs or local media editing suites (like MoviePy). A ChatGPT/Claude microservice drafts engaging scripts and visual descriptions. Once the video file is compiled, it uses the Instagram Graph API and TikTok Content Posting API via webhooks to upload and schedule the post, complete with optimized hashtags.",
+    "keyDecisions": [
+      {
+        "title": "Orchestrating with n8n",
+        "detail": "Instead of writing complex custom cron jobs and state management, n8n provided a visual, easily debuggable node canvas that handles API authorization, retries, and errors reliably."
+      },
+      {
+        "title": "Python for video composition",
+        "detail": "I utilized Python's rich media libraries for programmatic video compilation, combining images, audio tracks, and caption overlays into a cohesive video file with correct social aspect ratios."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Social media API upload constraints",
+        "detail": "TikTok and Instagram have strict video format requirements (resolution, bitrate, duration). I had to fine-tune the Python rendering settings to output exactly compliant MP4 files to prevent uploads from failing."
+      }
+    ],
+    "whatILearned": "This project deepened my knowledge of media processing and workflow orchestration. I learned how to handle rate-limits and large payload uploads over HTTP, and how to create self-healing automation runs that catch errors (like a failed API request) and notify me without breaking the entire pipeline."
+  },
+  {
+    "id": 15,
+    "slug": "youtube-automation",
+    "title": "YouTube Content Automation",
+    "tagline": "A complete channel management automation tool that generates video scripts, voiceovers, and uploads content.",
+    "techStack": ["Python", "AI/ML", "Node.js", "YouTube API", "n8n"],
+    "links": {
+      "github": null,
+      "live": null
+    },
+    "year": "2026",
+    "stats": [
+      { "label": "Platform", "value": "Python + n8n" },
+      { "label": "Services", "value": "OpenAI / TTS" },
+      { "label": "API", "value": "YouTube Data" }
+    ],
+    "whyIBuiltThis": "Managing a YouTube channel requires multiple disciplines: research, writing, voice recording, editing, and SEO description optimization. I built this system to automate the entire production line of a faceless YouTube channel, turning raw topic ideas into fully generated and uploaded long-form or short-form videos.",
+    "howItWorks": "The workflow begins with a topic input. The system asks an LLM to generate a detailed, structured script. It then sends this script to a Text-to-Speech API (like ElevenLabs) to produce a natural-sounding voiceover. Next, a Python script downloads royalty-free background footage or generates images matching script segments, syncs them to the audio track, and adds styled subtitles. Finally, it formats the title, tags, and description using SEO optimization, and uploads the video as a draft or scheduled post via the YouTube Data API.",
+    "keyDecisions": [
+      {
+        "title": "Automating video edits via code",
+        "detail": "Using manual video editors takes hours. I designed Python scripts to automate scene transitions, audio ducking (reducing background music when voiceover plays), and caption synchronization programmatically."
+      },
+      {
+        "title": "Modular AI integration",
+        "detail": "I kept the prompt templates separate from the code so I could easily tune the scriptwriting style or switch between OpenAI and Anthropic models depending on cost and quality."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Syncing captions with audio timing",
+        "detail": "Generating subtitles that align perfectly with the voiceover required parsing word-level timestamps returned by the TTS engine and drawing them onto individual frames of the video."
+      }
+    ],
+    "whatILearned": "I gained massive experience working with the YouTube Data API, handling OAuth 2.0 refresh tokens securely in a background task, and dealing with programmatic video compilation. It taught me how to break down a creative process into logical rules and algorithmic steps that code can execute."
+  },
+  {
     "id": 1,
     "slug": "digital-diary",
     "title": "Digital Diary",

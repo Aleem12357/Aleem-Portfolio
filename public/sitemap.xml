@@ -32,6 +32,21 @@
   </url>
   <!-- Projects -->
   <url>
+    <loc>https://aleem-portfolio.vercel.app/work/dental-skin-clinic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aleem-portfolio.vercel.app/work/tiktok-insta-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aleem-portfolio.vercel.app/work/youtube-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aleem-portfolio.vercel.app/work/digital-diary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
