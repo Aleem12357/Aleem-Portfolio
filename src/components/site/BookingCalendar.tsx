@@ -111,28 +111,28 @@ export function BookingCalendar({ compact = false }: { compact?: boolean }) {
     const formatGcalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d{3}/g, "");
     
     const meetingTitle = `30 Min Call: ${clientName} & Muhammad Aleem`;
-    const meetingDetails = `30-Minute Discovery & Project Call\n\nClient Name: ${clientName}\nClient Email: ${clientEmail}\nDate & Time: ${dateLabel} (PKT)\nTopic: ${topic || "Portfolio & Project Discussion"}\nHost: Muhammad Aleem (aleem12357@gmail.com)`;
+    const meetingDetails = `30-Minute Discovery & Project Call\n\nClient Name: ${clientName}\nClient Email: ${clientEmail}\nDate & Time: ${dateLabel} (PKT)\nTopic: ${topic || "Portfolio & Project Discussion"}\nHost: Muhammad Aleem (aleem123579@gmail.com)`;
 
     // Adding both emails to Google Calendar URL automatically triggers Google Calendar email invitation to client & host!
     const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
       meetingTitle
     )}&dates=${formatGcalDate(startDate)}/${formatGcalDate(endDate)}&details=${encodeURIComponent(
       meetingDetails
-    )}&add=${encodeURIComponent(`aleem12357@gmail.com,${clientEmail}`)}`;
+    )}&add=${encodeURIComponent(`aleem123579@gmail.com,${clientEmail}`)}`;
 
     const emailSubject = `📅 30 Min Call Booking: ${clientName} (${dateLabel})`;
     const emailBody = `Hi Aleem,\n\nI have requested a 30-minute call for ${dateLabel} (Asia/Karachi PKT).\n\nClient Name: ${clientName}\nClient Email: ${clientEmail}\nTopic: ${topic || "Project Discussion"}\n\nPlease confirm availability and send the Google Meet link.\n\nBest regards,\n${clientName}`;
 
     // Direct Webmail Composers (Works instantly in browser without desktop mail software!)
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem12357@gmail.com&cc=${encodeURIComponent(
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem123579@gmail.com&cc=${encodeURIComponent(
       clientEmail
     )}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
-    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=aleem12357@gmail.com&cc=${encodeURIComponent(
+    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=aleem123579@gmail.com&cc=${encodeURIComponent(
       clientEmail
     )}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
-    const mailtoUrl = `mailto:aleem12357@gmail.com?cc=${encodeURIComponent(
+    const mailtoUrl = `mailto:aleem123579@gmail.com?cc=${encodeURIComponent(
       clientEmail
     )}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
@@ -445,7 +445,7 @@ export function BookingCalendar({ compact = false }: { compact?: boolean }) {
             <div className="mt-4 rounded-xl border border-white/10 bg-surface-2/60 p-3.5 space-y-1.5 text-xs">
               <div className="text-muted-foreground"><span className="text-foreground font-medium">Name:</span> {bookingSuccess.clientName}</div>
               <div className="text-muted-foreground"><span className="text-foreground font-medium">Email:</span> {bookingSuccess.clientEmail}</div>
-              <div className="text-muted-foreground"><span className="text-foreground font-medium">Host Email:</span> aleem12357@gmail.com</div>
+              <div className="text-muted-foreground"><span className="text-foreground font-medium">Host Email:</span> aleem123579@gmail.com</div>
               {bookingSuccess.topic && (
                 <div className="text-muted-foreground"><span className="text-foreground font-medium">Topic:</span> {bookingSuccess.topic}</div>
               )}

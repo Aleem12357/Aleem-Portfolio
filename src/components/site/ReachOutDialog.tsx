@@ -16,12 +16,12 @@ export function ReachOutDialog() {
       toast.error("Write a short message first.");
       return;
     }
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem12357@gmail.com&su=${encodeURIComponent(
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem123579@gmail.com&su=${encodeURIComponent(
       "Hello from your portfolio",
     )}&body=${encodeURIComponent(message)}`;
     
     window.open(gmailUrl, "_blank");
-    toast.success("Opening Gmail composer to send to aleem12357@gmail.com!");
+    toast.success("Opening Gmail composer to send to aleem123579@gmail.com!");
   }
 
   return (
@@ -74,7 +74,7 @@ export function ReachOutDialog() {
                 </div>
                 <div>
                   <div className="text-sm">Send Aleem a message</div>
-                  <div className="text-xs text-muted-foreground">Sent to aleem12357@gmail.com</div>
+                  <div className="text-xs text-muted-foreground">Sent to aleem123579@gmail.com</div>
                 </div>
               </div>
               <textarea

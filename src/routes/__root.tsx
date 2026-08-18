@@ -138,7 +138,7 @@ function RootShell({ children }: { children: ReactNode }) {
       "addressLocality": "Islamabad",
       "addressCountry": "PK"
     },
-    "email": "aleem12357@gmail.com",
+    "email": "aleem123579@gmail.com",
     "knowsAbout": [
       "React",
       "Next.js",

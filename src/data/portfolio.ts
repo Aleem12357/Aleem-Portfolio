@@ -2,7 +2,7 @@ export const profile = {
   name: "Muhammad Aleem",
   role: "Full-Stack Developer",
   location: "Islamabad, Pakistan",
-  email: "aleem12357@gmail.com",
+  email: "aleem123579@gmail.com",
   phone: "+92 315 5196967",
   whatsapp: "https://wa.me/923155196967",
   github: "https://github.com/Aleem12357",

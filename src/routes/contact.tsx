@@ -61,11 +61,11 @@ function Contact() {
     const subject = `Hello from ${name} (${email || "Portfolio visitor"})`;
     const messageContent = `${message}\n\n— Sent by ${name} (${email || "No email provided"})`;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem12357@gmail.com&su=${encodeURIComponent(
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aleem123579@gmail.com&su=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(messageContent)}`;
 
-    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=aleem12357@gmail.com&subject=${encodeURIComponent(
+    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=aleem123579@gmail.com&subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(messageContent)}`;
 
@@ -153,7 +153,7 @@ function Contact() {
         <div className={`grid gap-3 md:grid-cols-[1.2fr_0.8fr] ${tab === "book" ? "hidden" : ""}`}>
           <form onSubmit={submit} className="panel p-7">
             <h2 className="text-2xl">Send me a message</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Sent directly to aleem12357@gmail.com</p>
+            <p className="mt-1 text-sm text-muted-foreground">Sent directly to aleem123579@gmail.com</p>
 
             <div className="mt-6 space-y-3">
               <input
@@ -262,7 +262,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xl font-display text-white">Message Ready to Send</h3>
-                  <p className="text-xs text-emerald-400">To: aleem12357@gmail.com</p>
+                  <p className="text-xs text-emerald-400">To: aleem123579@gmail.com</p>
                 </div>
               </div>
 
