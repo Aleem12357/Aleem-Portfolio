@@ -206,11 +206,11 @@ function Card({ project, index }: { project: (typeof projects)[number]; index: n
         property: "og:description",
         content: "Full-stack websites and AI automation workflows across React, Next.js, Python, n8n, Node, MongoDB, and Supabase.",
       },
-      { property: "og:url", content: "https://aleem-portfolio.vercel.app/work" },
+      { property: "og:url", content: "https://aleemstack.dev/work" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://aleem-portfolio.vercel.app/work" }],
+    links: [{ rel: "canonical", href: "https://aleemstack.dev/work" }],
   }),
   component: Work,
 });

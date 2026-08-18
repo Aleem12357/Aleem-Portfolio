@@ -1,108 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aleem-portfolio.vercel.app/</loc>
+    <loc>https://aleemstack.dev/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work</loc>
+    <loc>https://aleemstack.dev/work</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/about</loc>
+    <loc>https://aleemstack.dev/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/contact</loc>
+    <loc>https://aleemstack.dev/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/certificates</loc>
+    <loc>https://aleemstack.dev/certificates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/links</loc>
+    <loc>https://aleemstack.dev/links</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <!-- Projects -->
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/dental-skin-clinic</loc>
+    <loc>https://aleemstack.dev/work/dental-skin-clinic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/tiktok-insta-automation</loc>
+    <loc>https://aleemstack.dev/work/tiktok-insta-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/youtube-automation</loc>
+    <loc>https://aleemstack.dev/work/youtube-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/digital-diary</loc>
+    <loc>https://aleemstack.dev/work/digital-diary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/veamkodrive</loc>
+    <loc>https://aleemstack.dev/work/veamkodrive</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/unitrix</loc>
+    <loc>https://aleemstack.dev/work/unitrix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/vista-artisan-dreams</loc>
+    <loc>https://aleemstack.dev/work/vista-artisan-dreams</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/bytely</loc>
+    <loc>https://aleemstack.dev/work/bytely</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/ezi-website</loc>
+    <loc>https://aleemstack.dev/work/ezi-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/password-manager</loc>
+    <loc>https://aleemstack.dev/work/password-manager</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/textutils</loc>
+    <loc>https://aleemstack.dev/work/textutils</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/twitter-clone</loc>
+    <loc>https://aleemstack.dev/work/twitter-clone</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/bmw-website</loc>
+    <loc>https://aleemstack.dev/work/bmw-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/todo-list</loc>
+    <loc>https://aleemstack.dev/work/todo-list</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aleem-portfolio.vercel.app/work/clearclutter</loc>
+    <loc>https://aleemstack.dev/work/clearclutter</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

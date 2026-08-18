@@ -32,12 +32,12 @@ export const Route = createFileRoute("/")({
         content:
           "Full-stack developer from Islamabad building fast, typed web products with React, Next.js, Node, and AI integration.",
       },
-      { property: "og:url", content: "https://aleem-portfolio.vercel.app/" },
+      { property: "og:url", content: "https://aleemstack.dev/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://aleem-portfolio.vercel.app/" },
+      { rel: "canonical", href: "https://aleemstack.dev/" },
     ],
   }),
   component: Home,

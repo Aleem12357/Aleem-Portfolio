@@ -23,11 +23,11 @@ export const Route = createFileRoute("/about")({
         content:
           "Education, work experience and academic achievements of Muhammad Aleem, full-stack developer in Islamabad.",
       },
-      { property: "og:url", content: "https://aleem-portfolio.vercel.app/about" },
+      { property: "og:url", content: "https://aleemstack.dev/about" },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://aleem-portfolio.vercel.app/about" }],
+    links: [{ rel: "canonical", href: "https://aleemstack.dev/about" }],
   }),
   component: About,
 });

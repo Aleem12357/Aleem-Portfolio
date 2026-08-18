@@ -23,11 +23,11 @@ export const Route = createFileRoute("/certificates")({
         property: "og:description",
         content: "Verified certifications, course completions, and academic competition awards.",
       },
-      { property: "og:url", content: "https://aleem-portfolio.vercel.app/certificates" },
+      { property: "og:url", content: "https://aleemstack.dev/certificates" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://aleem-portfolio.vercel.app/certificates" }],
+    links: [{ rel: "canonical", href: "https://aleemstack.dev/certificates" }],
   }),
   component: Certificates,
 });

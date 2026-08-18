@@ -3,7 +3,7 @@
 > **Full-Stack Developer & AI Automation Specialist**  
 > Building high-performance web products, interactive 3D experiences, and intelligent automation workflows.
 
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-aleem--portfolio.vercel.app-00f0ff?style=for-the-badge&logo=vercel)](https://aleem-portfolio-rosy.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-aleemstack.dev-00f0ff?style=for-the-badge&logo=vercel)](https://aleemstack.dev/)
 [![GitHub](https://img.shields.io/badge/GitHub-Aleem12357-181717?style=for-the-badge&logo=github)](https://github.com/Aleem12357)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammadAleem-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/muhammadAleem123579/)
 [![Email](https://img.shields.io/badge/Email-aleem123579%40gmail.com-EA4335?style=for-the-badge&logo=gmail)](mailto:aleem123579@gmail.com)
@@ -95,7 +95,7 @@ To run this portfolio locally on your machine:
 
 ## 📬 Contact & Connect
 
-- **Portfolio**: [aleem-portfolio.vercel.app](https://aleem-portfolio.vercel.app)
+- **Portfolio**: [aleemstack.dev](https://aleemstack.dev)
 - **LinkedIn**: [linkedin.com/in/muhammadAleem123579](https://www.linkedin.com/in/muhammadAleem123579/)
 - **GitHub**: [github.com/Aleem12357](https://github.com/Aleem12357)
 - **Email**: [aleem123579@gmail.com](mailto:aleem123579@gmail.com)

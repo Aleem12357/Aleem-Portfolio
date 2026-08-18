@@ -25,11 +25,11 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Reach out about a project, a role, or schedule a 30-minute discovery call.",
       },
-      { property: "og:url", content: "https://aleem-portfolio.vercel.app/contact" },
+      { property: "og:url", content: "https://aleemstack.dev/contact" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://aleem-portfolio.vercel.app/contact" }],
+    links: [{ rel: "canonical", href: "https://aleemstack.dev/contact" }],
   }),
   component: Contact,
 });

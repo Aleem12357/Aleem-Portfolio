@@ -128,7 +128,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "@type": "Person",
     "name": "Muhammad Aleem",
     "jobTitle": "Full-Stack Developer & AI Automation Specialist",
-    "url": "https://aleem-portfolio.vercel.app",
+    "url": "https://aleemstack.dev",
     "sameAs": [
       "https://github.com/Aleem12357",
       "https://www.linkedin.com/in/muhammadAleem123579/"

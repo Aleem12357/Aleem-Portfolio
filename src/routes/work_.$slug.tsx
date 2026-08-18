@@ -62,7 +62,7 @@ export const Route = createFileRoute("/work_/$slug")({
     const project = allProjects.find((p) => p.slug === params.slug);
     const title = project ? `${project.title} — Full-Stack Case Study by Muhammad Aleem` : "Project — Muhammad Aleem";
     const desc = project?.tagline ?? "A full-stack software project built by Muhammad Aleem.";
-    const url = `https://aleem-portfolio.vercel.app/work/${params.slug}`;
+    const url = `https://aleemstack.dev/work/${params.slug}`;
     const keywords = project
       ? `${project.title}, ${project.techStack.join(", ")}, Muhammad Aleem Project, Full Stack Case Study`
       : "Muhammad Aleem, Full-Stack Project";
