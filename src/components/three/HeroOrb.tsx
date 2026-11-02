@@ -3,7 +3,7 @@ import { Float, Torus } from "@react-three/drei";
 import { Suspense, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { usePerfTier, type PerfSettings } from "@/hooks/usePerfTier";
-import aleemPic from "@/assets/Aleempic.png";
+import aleemPic from "@/assets/Aleempic1.png";
 
 /** Circular 3D portrait medallion: beveled metal disc, cyan glowing rim and depth. */
 function PhotoMedallion({ perf }: { perf: PerfSettings }) {
