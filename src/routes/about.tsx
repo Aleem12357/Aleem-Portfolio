@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { activities, education, experience, profile } from "@/data/portfolio";
-import aleem from "@/assets/Aleempic.png";
+import aleem from "@/assets/Aleem.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

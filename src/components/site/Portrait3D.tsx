@@ -1,5 +1,5 @@
 import { lazy, Suspense, useRef, useState } from "react";
-import aleemPic from "@/assets/Aleempic.png";
+import aleemPic from "@/assets/Aleem.png";
 import aleemLogo from "@/assets/aleem-logo.png";
 
 const HeroOrb = lazy(() => import("@/components/three/HeroOrb"));

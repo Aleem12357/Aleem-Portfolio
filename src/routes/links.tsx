@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Mail, MapPin, Phone, FileText, Link2, MessageCircle } from "lucide-react";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { profile } from "@/data/portfolio";
-import aleemPic from "@/assets/Aleempic.png";
+import aleemPic from "@/assets/Aleem.png";
 
 export const Route = createFileRoute("/links")({
   head: () => ({
