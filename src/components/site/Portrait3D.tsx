@@ -138,7 +138,7 @@ export function Portrait3D({ logo = false }: { logo?: boolean }) {
               <img
                 src={aleemPic}
                 alt="Portrait of Muhammad Aleem"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover object-center"
                 style={{
                   maskImage: "radial-gradient(78% 78% at 50% 42%, #000 60%, transparent 100%)",
                 }}
@@ -239,7 +239,7 @@ export function Portrait3D({ logo = false }: { logo?: boolean }) {
               <img
                 src={aleemPic}
                 alt="Portrait of Muhammad Aleem"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-center"
               />
             </div>
           </div>

@@ -36,10 +36,15 @@ function PhotoMedallion({ perf }: { perf: PerfSettings }) {
         <cylinderGeometry args={[1.42, 1.42, 0.28, seg]} />
         <meshStandardMaterial color="#0b1a29" metalness={0.9} roughness={0.28} />
       </mesh>
+      {/* dark backing disc giving contrast behind transparent portrait */}
+      <mesh position={[0, 0, 0.005]}>
+        <circleGeometry args={[1.36, seg]} />
+        <meshBasicMaterial color="#0a121e" />
+      </mesh>
       {/* portrait face */}
       <mesh position={[0, 0, 0.01]}>
         <circleGeometry args={[1.36, seg]} />
-        <meshBasicMaterial map={texture} toneMapped={false} />
+        <meshBasicMaterial map={texture} toneMapped={false} transparent />
       </mesh>
       {/* polished rim */}
       <Torus args={[1.42, 0.05, tube, seg]}>

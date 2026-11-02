@@ -62,11 +62,11 @@ function Links() {
             <img
               src={aleemPic}
               alt="Muhammad Aleem"
-              className="mx-auto size-32 rounded-full border border-border object-cover"
+              className="mx-auto size-32 rounded-full border border-border object-cover object-center bg-surface-2"
             />
             <h2 className="mt-4 text-2xl">{profile.name}</h2>
             <div className="mt-2 flex justify-center gap-2">
-              {["Developer", "Student", "TA"].map((t) => (
+              {["Engineer", "Lab Instructor", "Developer"].map((t) => (
                 <span
                   key={t}
                   className="rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] text-muted-foreground"
