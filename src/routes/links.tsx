@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Mail, MapPin, Phone, FileText, Link2, MessageCircle } from "lucide-react";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { profile } from "@/data/portfolio";
-import aleemPic from "@/assets/Aleem.png";
+import aleemPic from "@/assets/Aleempic.png";
 
 export const Route = createFileRoute("/links")({
   head: () => ({
@@ -62,11 +62,11 @@ function Links() {
             <img
               src={aleemPic}
               alt="Muhammad Aleem"
-              className="mx-auto size-32 rounded-full border border-border object-cover object-center bg-surface-2"
+              className="mx-auto size-32 rounded-full border border-border object-cover"
             />
             <h2 className="mt-4 text-2xl">{profile.name}</h2>
             <div className="mt-2 flex justify-center gap-2">
-              {["Engineer", "Lab Instructor", "Developer"].map((t) => (
+              {["Developer", "Student", "TA"].map((t) => (
                 <span
                   key={t}
                   className="rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] text-muted-foreground"

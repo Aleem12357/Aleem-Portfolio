@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import aleemLogo from "@/assets/aleem-logo.png";
-import aleemPic from "@/assets/Aleem.png";
+import aleemPic from "@/assets/Aleempic.png";
 
 export function SiteLoader() {
   const [loading, setLoading] = useState(true);

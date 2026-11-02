@@ -3,7 +3,7 @@ import { Float, Torus } from "@react-three/drei";
 import { Suspense, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { usePerfTier, type PerfSettings } from "@/hooks/usePerfTier";
-import aleemPic from "@/assets/Aleem.png";
+import aleemPic from "@/assets/Aleempic.png";
 
 /** Circular 3D portrait medallion: beveled metal disc, cyan glowing rim and depth. */
 function PhotoMedallion({ perf }: { perf: PerfSettings }) {
@@ -36,15 +36,10 @@ function PhotoMedallion({ perf }: { perf: PerfSettings }) {
         <cylinderGeometry args={[1.42, 1.42, 0.28, seg]} />
         <meshStandardMaterial color="#0b1a29" metalness={0.9} roughness={0.28} />
       </mesh>
-      {/* dark backing disc giving contrast behind transparent portrait */}
-      <mesh position={[0, 0, 0.005]}>
-        <circleGeometry args={[1.36, seg]} />
-        <meshBasicMaterial color="#0a121e" />
-      </mesh>
       {/* portrait face */}
       <mesh position={[0, 0, 0.01]}>
         <circleGeometry args={[1.36, seg]} />
-        <meshBasicMaterial map={texture} toneMapped={false} transparent />
+        <meshBasicMaterial map={texture} toneMapped={false} />
       </mesh>
       {/* polished rim */}
       <Torus args={[1.42, 0.05, tube, seg]}>

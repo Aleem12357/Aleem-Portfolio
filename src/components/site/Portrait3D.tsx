@@ -1,5 +1,5 @@
 import { lazy, Suspense, useRef, useState } from "react";
-import aleemPic from "@/assets/Aleem.png";
+import aleemPic from "@/assets/Aleempic.png";
 import aleemLogo from "@/assets/aleem-logo.png";
 
 const HeroOrb = lazy(() => import("@/components/three/HeroOrb"));
@@ -138,7 +138,7 @@ export function Portrait3D({ logo = false }: { logo?: boolean }) {
               <img
                 src={aleemPic}
                 alt="Portrait of Muhammad Aleem"
-                className="absolute inset-0 h-full w-full object-cover object-center"
+                className="absolute inset-0 h-full w-full object-cover"
                 style={{
                   maskImage: "radial-gradient(78% 78% at 50% 42%, #000 60%, transparent 100%)",
                 }}
@@ -239,7 +239,7 @@ export function Portrait3D({ logo = false }: { logo?: boolean }) {
               <img
                 src={aleemPic}
                 alt="Portrait of Muhammad Aleem"
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>

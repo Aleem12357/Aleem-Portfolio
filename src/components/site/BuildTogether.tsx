@@ -1,4 +1,4 @@
-import portrait from "@/assets/Aleem.png";
+import portrait from "@/assets/Aleempic.png";
 import { openReachOut } from "./reach-out";
 
 const avatars = [

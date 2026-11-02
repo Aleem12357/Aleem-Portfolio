@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Section } from "@/components/site/PageShell";
 import { activities, education, experience, profile } from "@/data/portfolio";
-import aleem from "@/assets/Aleem.png";
+import aleem from "@/assets/Aleempic.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -38,11 +38,11 @@ function About() {
       <Section eyebrow="Know about me" title="A developer who likes" italic="the whole stack">
         <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
           <div className="panel overflow-hidden">
-            <div className="relative aspect-square max-h-96 w-full overflow-hidden bg-gradient-to-b from-surface-2/80 to-surface">
+            <div className="relative aspect-[4/3] max-h-80 w-full overflow-hidden bg-surface-2">
               <img
                 src={aleem}
                 alt="Muhammad Aleem"
-                className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
               />
             </div>
             <div className="p-5">
