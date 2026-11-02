@@ -48,7 +48,7 @@ export function TourGuideBot() {
       botResponse = {
         id: (Date.now() + 1).toString(),
         sender: "bot",
-        text: "Aleem is an Associate Business Analyst at Zweidevs, former TA for OOP Lab at UCP, Jr Web Developer at Byte Force IT, and Freelance Full-Stack Developer.",
+        text: "Aleem is a Lab Instructor at UCP, Associate Business Developer at Zweidevs, former TA for OOP Lab, Jr Web Developer at Byte Force IT, and Freelance Full-Stack Developer.",
         link: { label: "View About & Work History", href: "/about" },
       };
     } else if (type === "certificates") {
@@ -96,7 +96,7 @@ export function TourGuideBot() {
       replyText = `You can email Aleem at ${profile.email} or message him directly on WhatsApp at +92 315 5196967.`;
       link = { label: "Open WhatsApp Chat", href: profile.whatsapp, isExternal: true };
     } else if (lower.includes("about") || lower.includes("gpa") || lower.includes("degree") || lower.includes("education") || lower.includes("ucp")) {
-      replyText = "Aleem is studying BS Software Engineering at UCP (3.95 CGPA) and works as an Associate Business Analyst and Full-Stack Developer.";
+      replyText = "Aleem is a Lab Instructor at UCP, Associate Business Developer at Zweidevs, and Software Engineer.";
       link = { label: "About Aleem", href: "/about" };
     }
 

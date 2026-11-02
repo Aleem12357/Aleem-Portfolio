@@ -6,18 +6,18 @@ import aleem from "@/assets/Aleempic.png";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Muhammad Aleem — Full-Stack Developer & Teaching Assistant" },
+      { title: "Muhammad Aleem — Software Engineer & Lab Instructor" },
       {
         name: "description",
         content:
-          "Background of Muhammad Aleem: BS Software Engineering at UCP (3.95 CGPA), Business Analyst at Zweidevs, teaching OOP labs, and full-stack software development.",
+          "Background of Muhammad Aleem: BS Software Engineering at UCP (3.95 CGPA), Associate Business Developer at Zweidevs, Lab Instructor at UCP, and software engineering.",
       },
       {
         name: "keywords",
         content:
-          "Muhammad Aleem About, Software Engineer Profile, UCP Graduate, Teaching Assistant OOP, Full-Stack Developer Islamabad",
+          "Muhammad Aleem About, Software Engineer Profile, UCP Graduate, Lab Instructor UCP, Software Engineer & Lab Instructor, Full-Stack Developer Islamabad",
       },
-      { property: "og:title", content: "About Muhammad Aleem — Developer & Educator" },
+      { property: "og:title", content: "Muhammad Aleem — Software Engineer & Lab Instructor" },
       {
         property: "og:description",
         content:
@@ -57,7 +57,7 @@ function About() {
             <p>{profile.blurb2}</p>
             <p>
               I believe in waking up each day eager to make a difference — whether that's shipping a
-              feature, unblocking a student in the OOP lab, or organising a hackathon on campus.
+              feature, guiding students as a Lab Instructor at UCP, or organising a hackathon on campus.
             </p>
           </div>
         </div>

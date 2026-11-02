@@ -20,7 +20,7 @@ From responsive frontend architectures to robust backend microservices and autom
 - 🚀 **Specializations**: Full-Stack Web Development, Interactive UI/UX, AI Integrations, and Process Automation.
 - ⚡ **Core Technologies**: React.js, Next.js, TanStack Start, TypeScript, Node.js, Express, Python, Tailwind CSS, and Three.js.
 - 🏆 **Achievements**: Awarded **3rd Place out of 175+ projects** at the UCP Open House FYP Exhibition for building *Digital Diary* — an AI-powered school management system.
-- 💼 **Experience**: Freelance Developer & Associate Business Analyst, working with global clients on custom web products, Upwork/Freelancer solutions, and technical proposals.
+- 💼 **Experience**: Lab Instructor at University of Central Punjab (UCP), Freelance Developer & Associate Business Developer, working with global clients on custom web products, Upwork/Freelancer solutions, and technical proposals.
 
 ---
 

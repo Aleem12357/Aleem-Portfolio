@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <div className="font-mono text-sm tracking-[0.3em]">M.ALEEM</div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            I'm Aleem — a full-stack developer, teaching assistant and problem solver. Thanks for
+            I'm Aleem — a software engineer, lab instructor and problem solver. Thanks for
             checking out my site.
           </p>
           <div className="mt-5 flex gap-2">

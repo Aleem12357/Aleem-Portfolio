@@ -1,6 +1,6 @@
 export const profile = {
   name: "Muhammad Aleem",
-  role: "Full-Stack Developer",
+  role: "Software Engineer & Lab Instructor",
   location: "Islamabad, Pakistan",
   email: "aleem123579@gmail.com",
   phone: "+92 315 5196967",
@@ -8,14 +8,14 @@ export const profile = {
   github: "https://github.com/Aleem12357",
   linkedin: "https://www.linkedin.com/in/muhammadAleem123579/",
   blurb:
-    "I'm Muhammad Aleem, a full-stack developer and AI automation specialist. From frontend to backend, I thrive on solving complex problems with clean, efficient code — React, Next.js, Vue and Node are my daily tools.",
+    "I'm Muhammad Aleem, a software engineer, lab instructor at University of Central Punjab (UCP), and AI automation specialist. From frontend to backend, I thrive on solving complex problems with clean, efficient code — React, Next.js, Vue and Node are my daily tools.",
   blurb2:
-    "I build scalable web products and intelligent automation workflows. Whether it's shipping a production app, integrating AI-driven features, or architecting an entire platform — I deliver clean code that works at scale.",
+    "I build scalable web products and intelligent automation workflows. Whether it's shipping a production app, mentoring students in programming labs, or architecting full-stack systems — I deliver clean code that works at scale.",
 };
 
 export const stats = [
   { value: "12+", label: "Projects shipped" },
-  { value: "6+", label: "Roles held" },
+  { value: "7+", label: "Roles held" },
   { value: "14+", label: "Public repos" },
   { value: "AI", label: "Automation" },
 ];
@@ -30,6 +30,17 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
+    role: "Lab Instructor",
+    company: "University of Central Punjab (UCP)",
+    period: "25 Sep 2026 — Present",
+    location: "Lahore, Pakistan",
+    points: [
+      "Conduct and supervise hands-on programming and software engineering lab sessions for undergraduate students.",
+      "Mentor students in core programming paradigms, algorithms, debugging techniques, and best coding practices.",
+      "Design practical lab tasks, evaluate assignments and projects, and provide constructive technical guidance.",
+    ],
+  },
+  {
     role: "Freelance Full-Stack Developer",
     company: "Self-Employed",
     period: "2024 — Present (2 years)",
@@ -40,7 +51,7 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "Associate Business Analyst",
+    role: "Associate Business Developer",
     company: "Zweidevs",
     period: "Dec 2025 — Present",
     location: "Lahore, Pakistan",
